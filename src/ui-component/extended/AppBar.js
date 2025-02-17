@@ -80,12 +80,12 @@ const AppBar = ({ ...others }) => {
                             <Button color="inherit" component={RouterLink} to="/login" target="_blank">
                                 Dashboard
                             </Button>
-                            <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
+                            <Button color="inherit" component={Link} href="#" target="_blank">
                                 About
                             </Button>
                             <Button
                                 component={Link}
-                                href="https://links.codedthemes.com/hsqll"
+                                href="#"
                                 disableElevation
                                 variant="contained"
                                 color="secondary"
@@ -124,7 +124,7 @@ const AppBar = ({ ...others }) => {
                                             </Link>
                                             <Link
                                                 style={{ textDecoration: 'none' }}
-                                                href="https://codedthemes.gitbook.io/berry"
+                                                href="#"
                                                 target="_blank"
                                             >
                                                 <ListItemButton component="a">
