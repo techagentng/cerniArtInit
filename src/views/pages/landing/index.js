@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import AppBar from 'ui-component/extended/AppBar';
 import { styled } from '@mui/material/styles';
@@ -11,23 +12,45 @@ const bounce = keyframes`
   50% { transform: translateY(-55%); }
 `;
 
-const HeroWrapper = styled(Box)(() => ({
+const gradients = [
+    'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
+    'linear-gradient(to top, #96fbc4 0%, #f9f586 100%)',
+    'linear-gradient(to top, #ff9a9e 0%, #fad0c4 100%)',
+    'linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%)',
+    'linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)',
+    'linear-gradient(to top, #84fab0 0%, #8fd3f4 100%)',
+    'linear-gradient(to top, #f6d365 0%, #fda085 100%)',
+    'linear-gradient(to top, #ff758c 0%, #ff7eb3 100%)',
+    'linear-gradient(to top, #a8edea 0%, #fed6e3 100%)',
+    'linear-gradient(to top, #fddb92 0%, #d1fdff 100%)'
+];
+
+const HeroWrapper = styled(Box)(({ background }) => ({
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    background: 'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
+    background: `${background} !important`, // Ensures the background is applied
     padding: '0 20px',
-    position: 'relative' // Required for absolute positioning of child elements
+    position: 'relative'
 }));
 
 const Landing = () => {
+    // ✅ Fix: Ensure a default gradient is set before useEffect runs
+    const [gradient, setGradient] = useState(() => 
+        gradients[Math.floor(Math.random() * gradients.length)]
+    );
+
+    useEffect(() => {
+        setGradient(gradients[Math.floor(Math.random() * gradients.length)]);
+    }, []);
+
     return (
         <>
             <AppBar />
-            <HeroWrapper>
+            <HeroWrapper background={gradient}>
                 {/* Left Image */}
                 <Box
                     component="img"
@@ -51,7 +74,7 @@ const Landing = () => {
                         left: { xs: '25px', sm: '180px' },
                         top: { xs: '73%', sm: '48%' },
                         textAlign: 'left',
-                        maxWidth: {md:'400px', xs: '300px'},
+                        maxWidth: { md: '400px', xs: '300px' },
                         zIndex: 2
                     }}
                 >
@@ -59,7 +82,8 @@ const Landing = () => {
                         Nigeria
                     </Typography>
                     <Typography variant="body1" sx={{ fontSize: { xs: '14px', sm: '16px' }, marginTop: '8px' }}>
-                        Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We believe in the transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and communities.
+                        Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. 
+                        We believe in the transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and communities.
                     </Typography>
                 </Box>
 
@@ -80,7 +104,7 @@ const Landing = () => {
                     }}
                 />
 
-                {/* Add the NigerianMap component here */}
+                {/* Nigerian Map Component */}
                 <Box sx={{ width: '100%', maxWidth: '700px', margin: '0 auto', zIndex: 1 }}>
                     <NigerianMap />
                 </Box>
