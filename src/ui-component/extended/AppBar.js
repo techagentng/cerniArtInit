@@ -83,13 +83,7 @@ const AppBar = ({ ...others }) => {
                             <Button color="inherit" component={Link} href="#" target="_blank">
                                 About
                             </Button>
-                            <Button
-                                component={Link}
-                                href="#"
-                                disableElevation
-                                variant="contained"
-                                color="secondary"
-                            >
+                            <Button component={Link} href="#" disableElevation variant="contained" color="secondary">
                                 Get involved
                             </Button>
                         </Stack>
@@ -122,11 +116,7 @@ const AppBar = ({ ...others }) => {
                                                     <ListItemText primary="Dashboard" />
                                                 </ListItemButton>
                                             </Link>
-                                            <Link
-                                                style={{ textDecoration: 'none' }}
-                                                href="#"
-                                                target="_blank"
-                                            >
+                                            <Link style={{ textDecoration: 'none' }} href="#" target="_blank">
                                                 <ListItemButton component="a">
                                                     <ListItemIcon>
                                                         <IconBook />
