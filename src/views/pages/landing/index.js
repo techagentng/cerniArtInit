@@ -13,6 +13,7 @@ import { setFormOpen } from 'store/slices/cartslice';
 import { useSelector, useDispatch } from 'react-redux';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import GroupsIcon from '@mui/icons-material/Groups';
+
 const bounce = keyframes`
   0%, 100% { transform: translateY(-50%); }
   50% { transform: translateY(-55%); }
@@ -46,18 +47,21 @@ const HeroWrapper = styled(Box)(({ background }) => ({
 const Landing = () => {
     const [gradient, setGradient] = useState(() => gradients[Math.floor(Math.random() * gradients.length)]);
     const isFormOpen = useSelector((state) => state.cart.isFormOpen);
-    const [, setIsTwoBoxModalOpen] = useState(true);
-    const [formType, setFormType] = useState(null);
-    const handleCloseForm = () => dispatch(setFormOpen(false));
+    const [formType, setFormType] = useState(null); // 'team' or 'initiative'
     const theme = useTheme();
     const dispatch = useDispatch();
+
     useEffect(() => {
         setGradient(gradients[Math.floor(Math.random() * gradients.length)]);
     }, []);
 
     const handleOpenForm = (type) => {
         setFormType(type);
-        setFormOpen(true);
+        dispatch(setFormOpen(false)); // Close the two-box modal
+    };
+
+    const handleCloseForm = () => {
+        setFormType(null); // Reset formType to close the form modal
     };
 
     return (
@@ -134,7 +138,7 @@ const Landing = () => {
                 }}
             >
                 {/* Two-Box Modal */}
-                <Modal open={isFormOpen} onClose={() => setIsTwoBoxModalOpen(false)}>
+                <Modal open={isFormOpen} onClose={() => dispatch(setFormOpen(false))}>
                     <Box
                         sx={{
                             position: 'absolute',
@@ -212,7 +216,7 @@ const Landing = () => {
                 </Modal>
 
                 {/* Form Modal */}
-                <Modal onClose={handleCloseForm}>
+                <Modal open={!!formType} onClose={handleCloseForm}>
                     <Box
                         sx={{
                             position: 'absolute',
@@ -236,8 +240,9 @@ const Landing = () => {
                             </IconButton>
                         </Box>
                         <TextField label="Full Name" variant="outlined" fullWidth />
-                        <TextField label="Email" variant="outlined" fullWidth />
-                        <TextField label={formType === 'team' ? 'Skills' : 'Interest'} variant="outlined" fullWidth />
+                        <TextField label="Location" variant="outlined" fullWidth />
+                        <TextField label="Phone number" variant="outlined" fullWidth />
+                        <TextField label={formType === 'team' ? 'Art medium' : 'Occupation'} variant="outlined" fullWidth />
                         <Button variant="contained" fullWidth sx={{ py: 1.5, color: 'white' }}>
                             Submit
                         </Button>
