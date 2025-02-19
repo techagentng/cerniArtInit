@@ -152,7 +152,7 @@ const Landing = () => {
                         variant="h1"
                         sx={{
                             fontFamily: "'Oleo Script', cursive", // Apply Oleo Script font
-                            fontSize: { xs: '24px', sm: '56px' }, // Responsive font sizes
+                            fontSize: { xs: '24px', sm: '52px' }, // Responsive font sizes
                             fontWeight: 900, // Boldest weight
                             whiteSpace: 'nowrap',
                             ml:2
