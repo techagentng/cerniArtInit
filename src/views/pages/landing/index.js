@@ -34,8 +34,11 @@ const gradients = [
     'linear-gradient(to top, #fddb92 0%, #d1fdff 100%)'
 ];
 
-const HeroWrapper = styled(Box)(({ background }) => ({
+const HeroWrapper = styled(Box)(({ background, theme }) => ({
     height: '100vh',
+    [theme.breakpoints.down('sm')]: {
+        height: '79vh', 
+    },
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -152,14 +155,14 @@ const Landing = () => {
                         variant="h1"
                         sx={{
                             fontFamily: "'Oleo Script', cursive", // Apply Oleo Script font
-                            fontSize: { xs: '24px', sm: '52px' }, // Responsive font sizes
+                            fontSize: { xs: '20px', sm: '52px' }, // Responsive font sizes
                             fontWeight: 900, // Boldest weight
                             whiteSpace: 'nowrap',
-                            ml:24,
-                            mt: {md: 33}
+                            ml:{md:24, xs: -2},
+                            mt: {md: 33, xs: -9}
                         }}
                     >
-                        Art for impact
+                        Art <br/>for impact
                     </Typography>
                 </Box>
 
@@ -170,10 +173,10 @@ const Landing = () => {
                     alt="Right Image"
                     sx={{
                         position: 'absolute',
-                        right: { xs: '20px', sm: '100px', md: '300px', xl: '380px' },
-                        top: { xs: '60%', sm: '85%' },
+                        right: { xs: '10px', sm: '100px', md: '300px', xl: '380px' },
+                        top: { xs: '64%', sm: '85%' },
                         transform: 'translateY(-50%)',
-                        width: { xs: '200px', sm: '350px', md: '400px' },
+                        width: { xs: '130px', sm: '350px', md: '400px' },
                         height: 'auto',
                         zIndex: 9,
                         animation: `${bounce} 1.5s infinite ease-in-out`
@@ -181,7 +184,7 @@ const Landing = () => {
                 />
 
                 {/* Nigerian Map Component */}
-                <Box sx={{ width: '100%', maxWidth: '700px', margin: '0 auto', zIndex: 1 }}>
+                <Box sx={{ width: '100%', maxWidth: '700px', margin: '3 auto', zIndex: 1 }}>
                     <NigerianMap />
                 </Box>
             </HeroWrapper>
