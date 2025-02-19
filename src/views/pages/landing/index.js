@@ -112,7 +112,7 @@ const Landing = () => {
                     alt="Right Image"
                     sx={{
                         position: 'absolute',
-                        right: { xs: '20px', sm: '100px', md: '300px', xl: '700px' },
+                        right: { xs: '20px', sm: '100px', md: '300px', xl: '520px' },
                         top: { xs: '60%', sm: '60%' },
                         transform: 'translateY(-50%)',
                         width: { xs: '200px', sm: '350px', md: '400px' },
