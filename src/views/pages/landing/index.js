@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Modal, IconButton, Button, TextField, Stack, useTheme } from '@mui/material';
+import { Box, Typography, Modal, IconButton, Button, TextField, Stack, useTheme, CircularProgress } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import AppBar from 'ui-component/extended/AppBar';
 import { styled } from '@mui/material/styles';
@@ -13,6 +13,9 @@ import { setFormOpen } from 'store/slices/cartslice';
 import { useSelector, useDispatch } from 'react-redux';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import GroupsIcon from '@mui/icons-material/Groups';
+// import { useFormik } from 'formik';
+// import * as Yup from 'yup';
+// import emailjs from 'emailjs-com';
 
 const bounce = keyframes`
   0%, 100% { transform: translateY(-50%); }
@@ -50,7 +53,7 @@ const Landing = () => {
     const [formType, setFormType] = useState(null); // 'team' or 'initiative'
     const theme = useTheme();
     const dispatch = useDispatch();
-
+    const [loading,] = useState(false);
     useEffect(() => {
         setGradient(gradients[Math.floor(Math.random() * gradients.length)]);
     }, []);
@@ -216,6 +219,7 @@ const Landing = () => {
                 </Modal>
 
                 {/* Form Modal */}
+                {/* Form Modal */}
                 <Modal open={!!formType} onClose={handleCloseForm}>
                     <Box
                         sx={{
@@ -239,13 +243,61 @@ const Landing = () => {
                                 <CloseIcon />
                             </IconButton>
                         </Box>
-                        <TextField label="Full Name" variant="outlined" fullWidth />
-                        <TextField label="Location" variant="outlined" fullWidth />
-                        <TextField label="Phone number" variant="outlined" fullWidth />
-                        <TextField label={formType === 'team' ? 'Art medium' : 'Occupation'} variant="outlined" fullWidth />
-                        <Button variant="contained" fullWidth sx={{ py: 1.5, color: 'white' }}>
-                            Submit
-                        </Button>
+
+                        {/* Formik Form */}
+                        <form onSubmit={formik.handleSubmit}>
+                            <TextField
+                                label="Full Name"
+                                variant="outlined"
+                                fullWidth
+                                name="fullName"
+                                value={formik.values.fullName}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                error={formik.touched.fullName && Boolean(formik.errors.fullName)}
+                                helperText={formik.touched.fullName && formik.errors.fullName}
+                            />
+
+                            <TextField
+                                label="Location"
+                                variant="outlined"
+                                fullWidth
+                                name="location"
+                                value={formik.values.location}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                error={formik.touched.location && Boolean(formik.errors.location)}
+                                helperText={formik.touched.location && formik.errors.location}
+                            />
+
+                            <TextField
+                                label="Phone Number"
+                                variant="outlined"
+                                fullWidth
+                                name="phoneNumber"
+                                value={formik.values.phoneNumber}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
+                                helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
+                            />
+
+                            <TextField
+                                label={formType === 'team' ? 'Art Medium' : 'Occupation'}
+                                variant="outlined"
+                                fullWidth
+                                name="extraField"
+                                value={formik.values.extraField}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                error={formik.touched.extraField && Boolean(formik.errors.extraField)}
+                                helperText={formik.touched.extraField && formik.errors.extraField}
+                            />
+
+                            <Button type="submit" variant="contained" fullWidth sx={{ py: 1.5, color: 'white', mt: 2 }} disabled={loading}>
+                                {loading ? <CircularProgress size={24} sx={{ color: 'white' }} /> : 'Submit'}
+                            </Button>
+                        </form>
                     </Box>
                 </Modal>
             </Box>

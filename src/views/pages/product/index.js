@@ -66,7 +66,7 @@ const Products = () => {
     const handleProductClick = (product) => {
         window.location.href = `/products/single/${product.id}`;
     };
-
+    const handleCloseCart = () => dispatch(setCartOpen(false));
     return (
         <>
             <AppBar open={isCartOpen} setOpen={() => dispatch(setCartOpen(!isCartOpen))} />
