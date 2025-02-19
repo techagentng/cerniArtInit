@@ -44,7 +44,7 @@ const StayInTouchSection = () => {
                         fontFamily: 'DaxlinePro' // Center text on mobile
                     }}
                 >
-                    By subscribing to our newsletter, we’ll keep you up to date with all our services, offerings, discounts, and promos.
+                    By subscribing to our newsletter, we’ll keep you up to date with all our events, programs & activities.
                 </Typography>
             </Box>
 

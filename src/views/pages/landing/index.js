@@ -148,13 +148,17 @@ const Landing = () => {
                         zIndex: 2
                     }}
                 >
-                    <Typography variant="h1" sx={{ fontSize: { xs: '24px', sm: '36px' }, fontWeight: 'bold' }}>
-                        Nigeria
-                    </Typography>
-                    <Typography variant="body1" sx={{ fontSize: { xs: '14px', sm: '16px' }, marginTop: '8px' }}>
-                        Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We believe in the
-                        transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and
-                        communities.
+                    <Typography
+                        variant="h1"
+                        sx={{
+                            fontFamily: "'Oleo Script', cursive", // Apply Oleo Script font
+                            fontSize: { xs: '24px', sm: '56px' }, // Responsive font sizes
+                            fontWeight: 900, // Boldest weight
+                            whiteSpace: 'nowrap',
+                            ml:2
+                        }}
+                    >
+                        Art for impact
                     </Typography>
                 </Box>
 
@@ -165,8 +169,8 @@ const Landing = () => {
                     alt="Right Image"
                     sx={{
                         position: 'absolute',
-                        right: { xs: '20px', sm: '100px', md: '300px', xl: '360px' },
-                        top: { xs: '60%', sm: '72%' },
+                        right: { xs: '20px', sm: '100px', md: '300px', xl: '380px' },
+                        top: { xs: '60%', sm: '85%' },
                         transform: 'translateY(-50%)',
                         width: { xs: '200px', sm: '350px', md: '400px' },
                         height: 'auto',
@@ -209,7 +213,7 @@ const Landing = () => {
                         }}
                     >
                         <Typography variant="h4" sx={{ mb: 2 }}>
-                            Join Us
+                            How can we help you!
                         </Typography>
                         <Stack direction="row" spacing={4} justifyContent="center">
                             {/* Join Our Team Box */}
@@ -234,7 +238,7 @@ const Landing = () => {
                             >
                                 <GroupsIcon sx={{ fontSize: 60, color: theme.palette.primary.main }} />
                                 <Typography variant="h6" sx={{ mt: 2 }}>
-                                    Join Our Team
+                                    Artist signup
                                 </Typography>
                             </Box>
 
@@ -260,7 +264,7 @@ const Landing = () => {
                             >
                                 <CampaignIcon sx={{ fontSize: 60, color: theme.palette.secondary.main }} />
                                 <Typography variant="h6" sx={{ mt: 2 }}>
-                                    Join Initiative
+                                    Volunteer
                                 </Typography>
                             </Box>
                         </Stack>
@@ -286,7 +290,7 @@ const Landing = () => {
                         }}
                     >
                         <Box display="flex" justifyContent="space-between" alignItems="center">
-                            <Typography variant="h5">{formType === 'team' ? 'Join Our Team' : 'Join Initiative'}</Typography>
+                            <Typography variant="h5">{formType === 'team' ? 'Join Our Team' : 'Volunteer'}</Typography>
                             <IconButton onClick={handleCloseForm}>
                                 <CloseIcon />
                             </IconButton>
