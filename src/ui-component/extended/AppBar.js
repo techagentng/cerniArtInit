@@ -59,7 +59,7 @@ ElevationScroll.propTypes = {
 
 const AppBar = ({ ...others }) => {
     const [drawerToggle, setDrawerToggle] = useState(false);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     // const totalItems = useSelector((state) => state.cart.totalItems);
 
