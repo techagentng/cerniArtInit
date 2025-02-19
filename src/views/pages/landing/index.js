@@ -155,7 +155,8 @@ const Landing = () => {
                             fontSize: { xs: '24px', sm: '52px' }, // Responsive font sizes
                             fontWeight: 900, // Boldest weight
                             whiteSpace: 'nowrap',
-                            ml:2
+                            ml:2,
+                            mt: {md: 33}
                         }}
                     >
                         Art for impact
