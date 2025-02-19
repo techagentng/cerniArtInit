@@ -100,7 +100,7 @@ const AppBar = ({ ...others }) => {
                                 minWidth: 0 // Prevents unintended wrapping
                             }}
                         >
-                            <Button color="inherit" component={Link} href="#" target="_blank">
+                            <Button color="inherit" component={Link} href="/" target="_blank">
                                 Home
                             </Button>
                             <Button color="inherit" component={RouterLink} to="/login" target="_blank">
