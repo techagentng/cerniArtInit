@@ -13,9 +13,8 @@ import { setFormOpen } from 'store/slices/cartslice';
 import { useSelector, useDispatch } from 'react-redux';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import GroupsIcon from '@mui/icons-material/Groups';
-// import { useFormik } from 'formik';
-// import * as Yup from 'yup';
-// import emailjs from 'emailjs-com';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const bounce = keyframes`
   0%, 100% { transform: translateY(-50%); }
@@ -47,13 +46,22 @@ const HeroWrapper = styled(Box)(({ background }) => ({
     position: 'relative'
 }));
 
+// Validation Schema
+const validationSchema = Yup.object({
+    fullName: Yup.string().required('Full Name is required'),
+    location: Yup.string().required('Location is required'),
+    phoneNumber: Yup.string().required('Phone Number is required'),
+    extraField: Yup.string().required('This field is required')
+});
+
 const Landing = () => {
     const [gradient, setGradient] = useState(() => gradients[Math.floor(Math.random() * gradients.length)]);
     const isFormOpen = useSelector((state) => state.cart.isFormOpen);
     const [formType, setFormType] = useState(null); // 'team' or 'initiative'
     const theme = useTheme();
     const dispatch = useDispatch();
-    const [loading,] = useState(false);
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         setGradient(gradients[Math.floor(Math.random() * gradients.length)]);
     }, []);
@@ -66,6 +74,48 @@ const Landing = () => {
     const handleCloseForm = () => {
         setFormType(null); // Reset formType to close the form modal
     };
+
+    // Formik Initialization
+    const formik = useFormik({
+        initialValues: {
+            fullName: '',
+            location: '',
+            phoneNumber: '',
+            extraField: ''
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values, { resetForm }) => {
+            setLoading(true);
+
+            const emailParams = {
+                fullName: values.fullName,
+                location: values.location,
+                phoneNumber: values.phoneNumber,
+                extraField: values.extraField
+            };
+
+            emailjs
+                .send(
+                    'service_3l7htaz', // Replace with your actual Service ID from EmailJS
+                    'your_template_id', // Replace with your actual Template ID
+                    emailParams,
+                    'your_user_id' // Replace with your actual Public Key (User ID)
+                )
+                .then((response) => {
+                    console.log('Email sent successfully:', response);
+                    alert('Form submitted successfully!');
+                    resetForm();
+                    handleCloseForm();
+                })
+                .catch((error) => {
+                    console.error('Error sending email:', error);
+                    alert('Failed to send form data.');
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        }
+    });
 
     return (
         <>
@@ -91,10 +141,10 @@ const Landing = () => {
                 <Box
                     sx={{
                         position: 'absolute',
-                        left: { xs: '25px', sm: '180px' },
+                        left: { xs: '25px', sm: '180px', md: '35px' },
                         top: { xs: '73%', sm: '48%' },
                         textAlign: 'left',
-                        maxWidth: { md: '400px', xs: '300px' },
+                        maxWidth: { md: '350px', xs: '300px' },
                         zIndex: 2
                     }}
                 >
@@ -115,8 +165,8 @@ const Landing = () => {
                     alt="Right Image"
                     sx={{
                         position: 'absolute',
-                        right: { xs: '20px', sm: '100px', md: '300px', xl: '520px' },
-                        top: { xs: '60%', sm: '60%' },
+                        right: { xs: '20px', sm: '100px', md: '300px', xl: '430px' },
+                        top: { xs: '60%', sm: '65%' },
                         transform: 'translateY(-50%)',
                         width: { xs: '200px', sm: '350px', md: '400px' },
                         height: 'auto',
@@ -136,7 +186,6 @@ const Landing = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: '100vh',
                     bgcolor: theme.palette.background.default
                 }}
             >
@@ -218,7 +267,6 @@ const Landing = () => {
                     </Box>
                 </Modal>
 
-                {/* Form Modal */}
                 {/* Form Modal */}
                 <Modal open={!!formType} onClose={handleCloseForm}>
                     <Box
