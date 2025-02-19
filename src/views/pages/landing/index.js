@@ -6,7 +6,8 @@ import { keyframes } from '@mui/system';
 import NigerianMap from './NigerianMap';
 import logo from './WhatsApp Image 2025-01-22 at 5.28.png';
 import mantra from './2025-01-22 at 3.28.png';
-
+import Form2 from 'ui-component/form';
+import Footer2 from 'ui-component/footer';
 const bounce = keyframes`
   0%, 100% { transform: translateY(-50%); }
   50% { transform: translateY(-55%); }
@@ -38,10 +39,7 @@ const HeroWrapper = styled(Box)(({ background }) => ({
 }));
 
 const Landing = () => {
-    // ✅ Fix: Ensure a default gradient is set before useEffect runs
-    const [gradient, setGradient] = useState(() => 
-        gradients[Math.floor(Math.random() * gradients.length)]
-    );
+    const [gradient, setGradient] = useState(() => gradients[Math.floor(Math.random() * gradients.length)]);
 
     useEffect(() => {
         setGradient(gradients[Math.floor(Math.random() * gradients.length)]);
@@ -82,8 +80,9 @@ const Landing = () => {
                         Nigeria
                     </Typography>
                     <Typography variant="body1" sx={{ fontSize: { xs: '14px', sm: '16px' }, marginTop: '8px' }}>
-                        Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. 
-                        We believe in the transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and communities.
+                        Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We believe in the
+                        transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and
+                        communities.
                     </Typography>
                 </Box>
 
@@ -94,10 +93,10 @@ const Landing = () => {
                     alt="Right Image"
                     sx={{
                         position: 'absolute',
-                        right: { xs: '20px', sm: '100px', md: '500px' },
+                        right: { xs: '20px', sm: '100px', md: '300px', xl:'700px' },
                         top: { xs: '60%', sm: '60%' },
                         transform: 'translateY(-50%)',
-                        width: { xs: '200px', sm: '350px', md: '510px' },
+                        width: { xs: '200px', sm: '350px', md: '400px' },
                         height: 'auto',
                         zIndex: 9,
                         animation: `${bounce} 1.5s infinite ease-in-out`
@@ -109,6 +108,8 @@ const Landing = () => {
                     <NigerianMap />
                 </Box>
             </HeroWrapper>
+            <Form2 />
+            <Footer2 />
         </>
     );
 };

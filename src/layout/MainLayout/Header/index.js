@@ -5,7 +5,7 @@ import { Avatar, Box, useMediaQuery } from '@mui/material';
 // project imports
 import LAYOUT_CONST from 'constant';
 import useConfig from 'hooks/useConfig';
-// import LogoSection from '../LogoSection';
+import LogoSection from '../LogoSection';
 import SearchSection from './SearchSection';
 import MobileSection from './MobileSection';
 import ProfileSection from './ProfileSection';
@@ -44,7 +44,7 @@ const Header = () => {
                 }}
             >
                 <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
-                    {/* <LogoSection /> */}
+                    <LogoSection />
                 </Box>
 
                 {layout === LAYOUT_CONST.VERTICAL_LAYOUT || (layout === LAYOUT_CONST.HORIZONTAL_LAYOUT && matchDownMd) ? (

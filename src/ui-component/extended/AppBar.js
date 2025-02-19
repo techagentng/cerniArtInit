@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import { cloneElement, useState } from 'react';
-
 import { Link as RouterLink } from 'react-router-dom';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCartOpen } from 'store/slices/cartslice';
+import Line from './line.png';
 
-// material-ui
+// Material-UI
 import { useTheme } from '@mui/material/styles';
 import {
     AppBar as MuiAppBar,
@@ -18,19 +21,17 @@ import {
     ListItemIcon,
     ListItemText,
     Stack,
+    Badge,
     Toolbar,
     Typography,
     useScrollTrigger
 } from '@mui/material';
 
-// project imports
-// import Logo from 'ui-component/Logo';
-
-// assets
+// Icons
 import { IconBook, IconCreditCard, IconDashboard, IconHome2 } from '@tabler/icons-react';
 import MenuIcon from '@mui/icons-material/Menu';
 
-// elevation scroll
+// Elevation Scroll
 function ElevationScroll({ children, window }) {
     const theme = useTheme();
     const trigger = useScrollTrigger({
@@ -53,10 +54,17 @@ ElevationScroll.propTypes = {
     window: PropTypes.object
 };
 
-// ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
+// ==============================|| APP BAR COMPONENT ||============================== //
 
 const AppBar = ({ ...others }) => {
     const [drawerToggle, setDrawerToggle] = useState(false);
+    const dispatch = useDispatch();
+
+    const totalItems = useSelector((state) => state.cart.totalItems);
+
+    const handleCartClick = () => {
+        dispatch(setCartOpen(true));
+    };
 
     const drawerToggler = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -67,26 +75,95 @@ const AppBar = ({ ...others }) => {
 
     return (
         <ElevationScroll {...others}>
-            <MuiAppBar>
-                <Container>
-                    <Toolbar sx={{ py: 2.5, px: `0 !important` }}>
+            <MuiAppBar sx={{ width: '100vw' }}>
+                <Container maxWidth="xl">
+                    <Toolbar sx={{ py: 2, px: '0 !important', display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                        {/* Left Section */}
                         <Typography component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
                             {/* <Logo /> */}
                         </Typography>
-                        <Stack direction="row" sx={{ display: { xs: 'none', sm: 'block' } }} spacing={{ xs: 1.5, md: 2.5 }}>
+
+                        {/* Navigation Menu */}
+                        <Stack
+                            direction="row"
+                            sx={{
+                                display: { xs: 'none', sm: 'flex' },
+                                flexWrap: 'nowrap', // Ensures items stay in one row
+                                alignItems: 'center',
+                                gap: { xs: 1.5, md: 2.5 },
+                                width: 'auto',
+                                minWidth: 0 // Prevents unintended wrapping
+                            }}
+                        >
                             <Button color="inherit" component={Link} href="#" target="_blank">
                                 Home
                             </Button>
                             <Button color="inherit" component={RouterLink} to="/login" target="_blank">
                                 Dashboard
                             </Button>
+                            <Button color="inherit" component={RouterLink} to="/products" target="_blank">
+                                Merchandise
+                            </Button>
                             <Button color="inherit" component={Link} href="#" target="_blank">
                                 About
                             </Button>
+
+                            {/* Decorative Line */}
+                            <Box
+                                component="img"
+                                src={Line}
+                                alt="line"
+                                sx={{
+                                    height: 'auto',
+                                    maxWidth: '100%',
+                                    objectFit: 'contain'
+                                }}
+                            />
+
+                            {/* Cart Button */}
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    fontSize: '1rem',
+                                    color: '#ff6c78',
+                                    backgroundColor: '#ffebed',
+                                    '&:hover': {
+                                        backgroundColor: '#ff6c78',
+                                        color: '#fff'
+                                    },
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    whiteSpace: 'nowrap'
+                                }}
+                                onClick={handleCartClick}
+                            >
+                                <Typography
+                                    sx={{
+                                        marginRight: 1,
+                                        color: 'black',
+                                        fontFamily: 'DaxlinePro',
+                                        fontSize: { xs: '1rem', md: '1rem' }
+                                    }}
+                                >
+                                    CART
+                                </Typography>
+                                {totalItems > 0 ? (
+                                    <Badge badgeContent={totalItems} color="error">
+                                        <ShoppingCartOutlinedIcon sx={{ fontSize: '1.5rem' }} />
+                                    </Badge>
+                                ) : (
+                                    <ShoppingCartOutlinedIcon sx={{ fontSize: '1.5rem' }} />
+                                )}
+                            </Button>
+
+                            {/* Get Involved Button */}
                             <Button component={Link} href="#" disableElevation variant="contained" color="secondary">
                                 Get involved
                             </Button>
                         </Stack>
+
+                        {/* Mobile Menu Icon */}
                         <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
                             <IconButton color="inherit" onClick={drawerToggler(true)} size="large">
                                 <MenuIcon />
