@@ -37,7 +37,7 @@ const gradients = [
 const HeroWrapper = styled(Box)(({ background, theme }) => ({
     height: '100vh',
     [theme.breakpoints.down('sm')]: {
-        height: '79vh', 
+        height: '79vh'
     },
     display: 'flex',
     flexDirection: 'column',
@@ -123,8 +123,18 @@ const Landing = () => {
     return (
         <>
             <AppBar open={isFormOpen} setOpen={() => dispatch(setFormOpen(!isFormOpen))} />
-            <HeroWrapper background={gradient}>
-                {/* Left Image */}
+            <HeroWrapper
+                background={gradient}
+                sx={{
+                    position: 'relative',
+                    minHeight: {md:'100vh' },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end', // Ensures the yellow box stays at the bottom
+                    overflow: 'hidden' // Prevents overflow issues
+                }}
+            >
+                {/* Left Image (Logo) */}
                 <Box
                     component="img"
                     src={logo}
@@ -154,40 +164,63 @@ const Landing = () => {
                     <Typography
                         variant="h1"
                         sx={{
-                            fontFamily: "'Oleo Script', cursive", // Apply Oleo Script font
-                            fontSize: { xs: '20px', sm: '52px' }, // Responsive font sizes
-                            fontWeight: 900, // Boldest weight
+                            fontFamily: "'Oleo Script', cursive",
+                            fontSize: { xs: '20px', sm: '52px' },
+                            fontWeight: 900,
                             whiteSpace: 'nowrap',
-                            ml:{md:24, xs: -2},
-                            mt: {md: 33, xs: -9}
+                            ml: { md: 24, xs: -2 },
+                            mt: { md: 36, xs: 7 }
                         }}
                     >
-                        Art <br/>for impact
+                        Art for impact
                     </Typography>
                 </Box>
 
-                {/* Right Image */}
-                <Box
-                    component="img"
-                    src={mantra}
-                    alt="Right Image"
-                    sx={{
-                        position: 'absolute',
-                        right: { xs: '10px', sm: '100px', md: '300px', xl: '380px' },
-                        top: { xs: '64%', sm: '85%' },
-                        transform: 'translateY(-50%)',
-                        width: { xs: '130px', sm: '350px', md: '400px' },
-                        height: 'auto',
-                        zIndex: 9,
-                        animation: `${bounce} 1.5s infinite ease-in-out`
-                    }}
-                />
-
                 {/* Nigerian Map Component */}
-                <Box sx={{ width: '100%', maxWidth: '700px', margin: '3 auto', zIndex: 1 }}>
+                <Box
+                    sx={{
+                        width: '100%',
+                        maxWidth: '700px',
+                        margin: '0 auto', // Center the map
+                        zIndex: 1,
+                        position: 'relative', // Ensure it stays in the flow
+                        top: { xs: '-18%', sm: '20%' } // Adjust positioning
+                    }}
+                >
                     <NigerianMap />
                 </Box>
+
+                {/* Yellow Box at the Base */}
+                <Box
+                    sx={{
+                        position: 'relative', // Changed to relative to contain the mantra image
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        height: { xs: '15px', sm: '200px' },
+                        display: 'flex',
+                        justifyContent: 'flex-end', // Aligns the content to the right
+                        alignItems: 'center', // Centers vertically
+                        paddingX: { xs: 2, sm: 5, md: 2 },
+                        zIndex: 0
+                    }}
+                >
+                    {/* Right Image (Inside Yellow Box) */}
+                    <Box
+                        component="img"
+                        src={mantra}
+                        alt="Right Image"
+                        sx={{
+                            width: { xs: '170px', sm: '250px', md: '300px' },
+                            height: 'auto',
+                            animation: `${bounce} 1.5s infinite ease-in-out`,
+                            mt:{md:37, xs: -11},
+                            mr: {md:50}
+                        }}
+                    />
+                </Box>
             </HeroWrapper>
+
             <Form2 />
             <Box
                 sx={{
