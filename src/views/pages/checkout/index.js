@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
     city: Yup.string().required('City is required'),
     state: Yup.string().required('State is required'),
     shippingMethod: Yup.string().required('Shipping method is required'),
-    paymentMethod: Yup.string().required('Payment method is required'),
+    paymentMethod: Yup.string().required('Payment method is required')
 });
 
 const CheckoutPage = () => {
@@ -35,7 +35,7 @@ const CheckoutPage = () => {
         const payload = {
             ...values,
             cartItems,
-            totalAmount: cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0),
+            totalAmount: cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
         };
         console.log('Payload:', payload);
         // Make API call here
@@ -58,7 +58,7 @@ const CheckoutPage = () => {
                         city: '',
                         state: '',
                         shippingMethod: 'pickInStoreLagos',
-                        paymentMethod: 'cardPayment',
+                        paymentMethod: 'cardPayment'
                     }}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
@@ -69,7 +69,15 @@ const CheckoutPage = () => {
                                 {/* Left Column: Contact & Shipping Information */}
                                 <Grid item xs={12} md={6}>
                                     {/* Contact Section */}
-                                    <Box sx={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', boxShadow: 1, marginBottom: '2rem' }}>
+                                    <Box
+                                        sx={{
+                                            backgroundColor: '#fff',
+                                            padding: '1rem',
+                                            borderRadius: '8px',
+                                            boxShadow: 1,
+                                            marginBottom: '2rem'
+                                        }}
+                                    >
                                         <Typography variant="h3" sx={{ marginBottom: '1rem' }}>
                                             Contact
                                         </Typography>
@@ -89,7 +97,7 @@ const CheckoutPage = () => {
                                                     <IconButton>
                                                         <img src={user} alt="user icon" style={{ width: 20, height: 20 }} />
                                                     </IconButton>
-                                                ),
+                                                )
                                             }}
                                         />
                                         <ErrorMessage name="fullName" component="div" style={{ color: 'red', fontSize: '0.875rem' }} />
@@ -110,7 +118,7 @@ const CheckoutPage = () => {
                                                     <IconButton>
                                                         <img src={email} alt="email icon" style={{ width: 20, height: 20 }} />
                                                     </IconButton>
-                                                ),
+                                                )
                                             }}
                                         />
                                         <ErrorMessage name="email" component="div" style={{ color: 'red', fontSize: '0.875rem' }} />
@@ -131,14 +139,22 @@ const CheckoutPage = () => {
                                                     <IconButton>
                                                         <img src={phone} alt="phone icon" style={{ width: 20, height: 20 }} />
                                                     </IconButton>
-                                                ),
+                                                )
                                             }}
                                         />
                                         <ErrorMessage name="phone" component="div" style={{ color: 'red', fontSize: '0.875rem' }} />
                                     </Box>
 
                                     {/* Address Section */}
-                                    <Box sx={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', boxShadow: 1, marginBottom: '2rem' }}>
+                                    <Box
+                                        sx={{
+                                            backgroundColor: '#fff',
+                                            padding: '1rem',
+                                            borderRadius: '8px',
+                                            boxShadow: 1,
+                                            marginBottom: '2rem'
+                                        }}
+                                    >
                                         <Typography variant="h3" sx={{ marginBottom: '1rem' }}>
                                             Address
                                         </Typography>
@@ -157,7 +173,7 @@ const CheckoutPage = () => {
                                                     <IconButton>
                                                         <img src={email} alt="address icon" style={{ width: 20, height: 20 }} />
                                                     </IconButton>
-                                                ),
+                                                )
                                             }}
                                             sx={{ marginBottom: '1rem' }}
                                         />
@@ -178,7 +194,7 @@ const CheckoutPage = () => {
                                                     <IconButton>
                                                         <img src={email} alt="city icon" style={{ width: 20, height: 20 }} />
                                                     </IconButton>
-                                                ),
+                                                )
                                             }}
                                             sx={{ marginBottom: '1rem' }}
                                         />
@@ -198,7 +214,7 @@ const CheckoutPage = () => {
                                                     <IconButton>
                                                         <img src={email} alt="state icon" style={{ width: 20, height: 20 }} />
                                                     </IconButton>
-                                                ),
+                                                )
                                             }}
                                             variant="outlined"
                                             sx={{ marginBottom: '1rem' }}
@@ -207,16 +223,20 @@ const CheckoutPage = () => {
                                     </Box>
 
                                     {/* Shipping Method */}
-                                    <Box sx={{ backgroundColor: '#fff', padding: '1rem', borderRadius: '8px', boxShadow: 1, marginBottom: '2rem' }}>
+                                    <Box
+                                        sx={{
+                                            backgroundColor: '#fff',
+                                            padding: '1rem',
+                                            borderRadius: '8px',
+                                            boxShadow: 1,
+                                            marginBottom: '2rem'
+                                        }}
+                                    >
                                         <Typography variant="h3" sx={{ marginBottom: '1rem' }}>
                                             Shipping Method
                                         </Typography>
                                         <FormControl component="fieldset" sx={{ width: '100%' }}>
-                                            <RadioGroup
-                                                name="shippingMethod"
-                                                value={values.shippingMethod}
-                                                onChange={handleChange}
-                                            >
+                                            <RadioGroup name="shippingMethod" value={values.shippingMethod} onChange={handleChange}>
                                                 <FormControlLabel
                                                     value="pickInStoreLagos"
                                                     control={<Radio />}
@@ -234,7 +254,11 @@ const CheckoutPage = () => {
                                                 />
                                             </RadioGroup>
                                         </FormControl>
-                                        <ErrorMessage name="shippingMethod" component="div" style={{ color: 'red', fontSize: '0.875rem' }} />
+                                        <ErrorMessage
+                                            name="shippingMethod"
+                                            component="div"
+                                            style={{ color: 'red', fontSize: '0.875rem' }}
+                                        />
                                     </Box>
 
                                     {/* Payment Section */}
@@ -243,21 +267,9 @@ const CheckoutPage = () => {
                                             Payment
                                         </Typography>
                                         <FormControl component="fieldset" sx={{ width: '100%' }}>
-                                            <RadioGroup
-                                                name="paymentMethod"
-                                                value={values.paymentMethod}
-                                                onChange={handleChange}
-                                            >
-                                                <FormControlLabel
-                                                    value="payOnDelivery"
-                                                    control={<Radio />}
-                                                    label="Pay on Delivery"
-                                                />
-                                                <FormControlLabel
-                                                    value="cardPayment"
-                                                    control={<Radio />}
-                                                    label="Card Payment"
-                                                />
+                                            <RadioGroup name="paymentMethod" value={values.paymentMethod} onChange={handleChange}>
+                                                <FormControlLabel value="payOnDelivery" control={<Radio />} label="Pay on Delivery" />
+                                                <FormControlLabel value="cardPayment" control={<Radio />} label="Card Payment" />
                                             </RadioGroup>
                                         </FormControl>
                                         <ErrorMessage name="paymentMethod" component="div" style={{ color: 'red', fontSize: '0.875rem' }} />
@@ -272,7 +284,10 @@ const CheckoutPage = () => {
                                         </Typography>
                                         <Box sx={{ marginBottom: '1rem' }}>
                                             {cartItems.map((item, index) => (
-                                                <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                                                <Box
+                                                    key={index}
+                                                    sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}
+                                                >
                                                     <Typography>{item.name}</Typography>
                                                     <Typography>
                                                         {item.quantity} x ${item.price}

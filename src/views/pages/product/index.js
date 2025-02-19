@@ -61,7 +61,7 @@ const Products = () => {
         }, 1000); // Simulate a 1-second delay
     };
 
-    const handleCloseCart = () => dispatch(setCartOpen(false));
+    const handleCloseForm = () => dispatch(setFormOpen(false));
 
     const handleProductClick = (product) => {
         window.location.href = `/products/single/${product.id}`;
@@ -116,7 +116,7 @@ const Products = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <Modal open={isCartOpen} onClose={handleCloseCart}>
+                <Modal open={isCartOpen} onClose={handleCloseForm}>
                     <Box
                         sx={{
                             position: 'absolute',

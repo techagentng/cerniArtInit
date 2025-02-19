@@ -4,6 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCartOpen } from 'store/slices/cartslice';
+import { setFormOpen } from 'store/slices/cartslice';
 import Line from './line.png';
 
 // Material-UI
@@ -64,6 +65,10 @@ const AppBar = ({ ...others }) => {
 
     const handleCartClick = () => {
         dispatch(setCartOpen(true));
+    };
+
+    const handleFormClick = () => {
+        dispatch(setFormOpen(true));
     };
 
     const drawerToggler = (open) => (event) => {
@@ -158,7 +163,14 @@ const AppBar = ({ ...others }) => {
                             </Button>
 
                             {/* Get Involved Button */}
-                            <Button component={Link} href="#" disableElevation variant="contained" color="secondary">
+                            <Button
+                                component={Link}
+                                href="#"
+                                disableElevation
+                                variant="contained"
+                                color="secondary"
+                                onClick={handleFormClick}
+                            >
                                 Get involved
                             </Button>
                         </Stack>

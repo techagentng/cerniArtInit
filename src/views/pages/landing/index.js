@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Modal, IconButton, Button, TextField, Stack, useTheme } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import AppBar from 'ui-component/extended/AppBar';
 import { styled } from '@mui/material/styles';
 import { keyframes } from '@mui/system';
@@ -8,6 +9,10 @@ import logo from './WhatsApp Image 2025-01-22 at 5.28.png';
 import mantra from './2025-01-22 at 3.28.png';
 import Form2 from 'ui-component/form';
 import Footer2 from 'ui-component/footer';
+import { setFormOpen } from 'store/slices/cartslice';
+import { useSelector, useDispatch } from 'react-redux';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import GroupsIcon from '@mui/icons-material/Groups';
 const bounce = keyframes`
   0%, 100% { transform: translateY(-50%); }
   50% { transform: translateY(-55%); }
@@ -40,14 +45,24 @@ const HeroWrapper = styled(Box)(({ background }) => ({
 
 const Landing = () => {
     const [gradient, setGradient] = useState(() => gradients[Math.floor(Math.random() * gradients.length)]);
-
+    const isFormOpen = useSelector((state) => state.cart.isFormOpen);
+    const [, setIsTwoBoxModalOpen] = useState(true);
+    const [formType, setFormType] = useState(null);
+    const handleCloseForm = () => dispatch(setFormOpen(false));
+    const theme = useTheme();
+    const dispatch = useDispatch();
     useEffect(() => {
         setGradient(gradients[Math.floor(Math.random() * gradients.length)]);
     }, []);
 
+    const handleOpenForm = (type) => {
+        setFormType(type);
+        setFormOpen(true);
+    };
+
     return (
         <>
-            <AppBar />
+            <AppBar open={isFormOpen} setOpen={() => dispatch(setFormOpen(!isFormOpen))} />
             <HeroWrapper background={gradient}>
                 {/* Left Image */}
                 <Box
@@ -93,7 +108,7 @@ const Landing = () => {
                     alt="Right Image"
                     sx={{
                         position: 'absolute',
-                        right: { xs: '20px', sm: '100px', md: '300px', xl:'700px' },
+                        right: { xs: '20px', sm: '100px', md: '300px', xl: '700px' },
                         top: { xs: '60%', sm: '60%' },
                         transform: 'translateY(-50%)',
                         width: { xs: '200px', sm: '350px', md: '400px' },
@@ -109,6 +124,126 @@ const Landing = () => {
                 </Box>
             </HeroWrapper>
             <Form2 />
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100vh',
+                    bgcolor: theme.palette.background.default
+                }}
+            >
+                {/* Two-Box Modal */}
+                <Modal open={isFormOpen} onClose={() => setIsTwoBoxModalOpen(false)}>
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '600px',
+                            bgcolor: 'background.paper',
+                            borderRadius: 2,
+                            boxShadow: 24,
+                            p: 4,
+                            textAlign: 'center',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 3
+                        }}
+                    >
+                        <Typography variant="h4" sx={{ mb: 2 }}>
+                            Join Us
+                        </Typography>
+                        <Stack direction="row" spacing={4} justifyContent="center">
+                            {/* Join Our Team Box */}
+                            <Box
+                                onClick={() => handleOpenForm('team')}
+                                sx={{
+                                    width: '200px',
+                                    height: '200px',
+                                    bgcolor: theme.palette.primary.light,
+                                    borderRadius: 2,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.2s, box-shadow 0.2s',
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                        boxShadow: 5
+                                    }
+                                }}
+                            >
+                                <GroupsIcon sx={{ fontSize: 60, color: theme.palette.primary.main }} />
+                                <Typography variant="h6" sx={{ mt: 2 }}>
+                                    Join Our Team
+                                </Typography>
+                            </Box>
+
+                            {/* Join Initiative Box */}
+                            <Box
+                                onClick={() => handleOpenForm('initiative')}
+                                sx={{
+                                    width: '200px',
+                                    height: '200px',
+                                    bgcolor: theme.palette.secondary.light,
+                                    borderRadius: 2,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.2s, box-shadow 0.2s',
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                        boxShadow: 5
+                                    }
+                                }}
+                            >
+                                <CampaignIcon sx={{ fontSize: 60, color: theme.palette.secondary.main }} />
+                                <Typography variant="h6" sx={{ mt: 2 }}>
+                                    Join Initiative
+                                </Typography>
+                            </Box>
+                        </Stack>
+                    </Box>
+                </Modal>
+
+                {/* Form Modal */}
+                <Modal onClose={handleCloseForm}>
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            width: '400px',
+                            bgcolor: 'background.paper',
+                            borderRadius: 2,
+                            boxShadow: 24,
+                            p: 4,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 3
+                        }}
+                    >
+                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                            <Typography variant="h5">{formType === 'team' ? 'Join Our Team' : 'Join Initiative'}</Typography>
+                            <IconButton onClick={handleCloseForm}>
+                                <CloseIcon />
+                            </IconButton>
+                        </Box>
+                        <TextField label="Full Name" variant="outlined" fullWidth />
+                        <TextField label="Email" variant="outlined" fullWidth />
+                        <TextField label={formType === 'team' ? 'Skills' : 'Interest'} variant="outlined" fullWidth />
+                        <Button variant="contained" fullWidth sx={{ py: 1.5, color: 'white' }}>
+                            Submit
+                        </Button>
+                    </Box>
+                </Modal>
+            </Box>
             <Footer2 />
         </>
     );
