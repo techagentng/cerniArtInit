@@ -3,10 +3,10 @@ import { Box, Typography, Modal, IconButton, Button, TextField, Stack, useTheme,
 import CloseIcon from '@mui/icons-material/Close';
 import AppBar from 'ui-component/extended/AppBar';
 import { styled } from '@mui/material/styles';
-import { keyframes } from '@mui/system';
+// import { keyframes } from '@mui/system';
 import NigerianMap from './NigerianMap';
 import logo from './WhatsApp Image 2025-01-22 at 5.28.png';
-import mantra from './2025-01-22 at 3.28.png';
+// import mantra from './2025-01-22 at 3.28.png';
 import Form2 from 'ui-component/form';
 import Footer2 from 'ui-component/footer';
 import { setFormOpen } from 'store/slices/cartslice';
@@ -16,10 +16,10 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const bounce = keyframes`
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(-55%); }
-`;
+// const bounce = keyframes`
+//   0%, 100% { transform: translateY(-50%); }
+//   50% { transform: translateY(-55%); }
+// `;
 
 const gradients = [
     'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',
@@ -197,7 +197,7 @@ const Landing = () => {
                         </Typography>
                     </Box>
                     {/* Right Image (Inside Yellow Box) */}
-                    <Box
+                    {/* <Box
                         component="img"
                         src={mantra}
                         alt="Right Image"
@@ -208,7 +208,7 @@ const Landing = () => {
                             marginRight: '400px',
                             marginTop: '100px'
                         }}
-                    />
+                    /> */}
                 </Box>
             </HeroWrapper>
 
