@@ -168,12 +168,11 @@ const Landing = () => {
                 <Box
                     sx={{
                         position: 'relative',
+                        display: 'flex',
                         width: '100%',
                         height: { xs: '15px', sm: '200px' },
-                        display: 'flex',
                         justifyContent: 'space-between',
                         paddingX: { xs: 2, sm: 5, md: 2 },
-                        zIndex: 0,
                     }}
                 >
                     {/* Heading and Description */}
@@ -186,11 +185,11 @@ const Landing = () => {
                         <Typography
                             variant="h1"
                             sx={{
-                                fontFamily: "'Oleo Script', cursive",
+                                fontFamily: "Oleo Script', cursive",
                                 fontSize: { xs: '20px', sm: '52px' },
                                 fontWeight: 900,
                                 whiteSpace: 'nowrap',
-                                marginLeft: '260px',
+                                marginLeft: '230px',
                                 marginTop: '100px'
                             }}
                         >
@@ -206,7 +205,7 @@ const Landing = () => {
                             width: { xs: '170px', sm: '250px', md: '300px' },
                             height: '350px',
                             animation: `${bounce} 1.5s infinite ease-in-out`,
-                            marginRight: '420px',
+                            marginRight: '400px',
                             marginTop: '100px'
                         }}
                     />
