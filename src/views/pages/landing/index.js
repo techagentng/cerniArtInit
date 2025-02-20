@@ -44,7 +44,7 @@ const HeroWrapper = styled(Box)(({ background, theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    background: `${background} !important`, // Ensures the background is applied
+    background: `${background} !important`,
     padding: '0 20px',
     position: 'relative'
 }));
@@ -71,11 +71,11 @@ const Landing = () => {
 
     const handleOpenForm = (type) => {
         setFormType(type);
-        dispatch(setFormOpen(false)); // Close the two-box modal
+        dispatch(setFormOpen(false));
     };
 
     const handleCloseForm = () => {
-        setFormType(null); // Reset formType to close the form modal
+        setFormType(null);
     };
 
     // Formik Initialization
@@ -127,7 +127,7 @@ const Landing = () => {
                 background={gradient}
                 sx={{
                     position: 'relative',
-                    minHeight: {md:'100vh' },
+                    minHeight: { md: '100vh' },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end', // Ensures the yellow box stays at the bottom
@@ -150,32 +150,6 @@ const Landing = () => {
                     }}
                 />
 
-                {/* Heading and Description */}
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        left: { xs: '25px', sm: '180px', md: '35px' },
-                        top: { xs: '73%', sm: '48%' },
-                        textAlign: 'left',
-                        maxWidth: { md: '350px', xs: '300px' },
-                        zIndex: 2
-                    }}
-                >
-                    <Typography
-                        variant="h1"
-                        sx={{
-                            fontFamily: "'Oleo Script', cursive",
-                            fontSize: { xs: '20px', sm: '52px' },
-                            fontWeight: 900,
-                            whiteSpace: 'nowrap',
-                            ml: { md: 24, xs: -2 },
-                            mt: { md: 36, xs: 7 }
-                        }}
-                    >
-                        Art for impact
-                    </Typography>
-                </Box>
-
                 {/* Nigerian Map Component */}
                 <Box
                     sx={{
@@ -193,18 +167,36 @@ const Landing = () => {
                 {/* Yellow Box at the Base */}
                 <Box
                     sx={{
-                        position: 'relative', // Changed to relative to contain the mantra image
-                        bottom: 0,
-                        left: 0,
+                        position: 'relative',
                         width: '100%',
                         height: { xs: '15px', sm: '200px' },
                         display: 'flex',
-                        justifyContent: 'flex-end', // Aligns the content to the right
-                        alignItems: 'center', // Centers vertically
+                        justifyContent: 'space-between',
                         paddingX: { xs: 2, sm: 5, md: 2 },
-                        zIndex: 0
+                        zIndex: 0,
                     }}
                 >
+                    {/* Heading and Description */}
+                    <Box
+                        sx={{
+                            maxWidth: { md: '350px', xs: '300px' },
+                            zIndex: 2
+                        }}
+                    >
+                        <Typography
+                            variant="h1"
+                            sx={{
+                                fontFamily: "'Oleo Script', cursive",
+                                fontSize: { xs: '20px', sm: '52px' },
+                                fontWeight: 900,
+                                whiteSpace: 'nowrap',
+                                marginLeft: '260px',
+                                marginTop: '100px'
+                            }}
+                        >
+                            Art for impact
+                        </Typography>
+                    </Box>
                     {/* Right Image (Inside Yellow Box) */}
                     <Box
                         component="img"
@@ -212,10 +204,10 @@ const Landing = () => {
                         alt="Right Image"
                         sx={{
                             width: { xs: '170px', sm: '250px', md: '300px' },
-                            height: 'auto',
+                            height: '350px',
                             animation: `${bounce} 1.5s infinite ease-in-out`,
-                            mt:{md:37, xs: -11},
-                            mr: {md:50}
+                            marginRight: '420px',
+                            marginTop: '100px'
                         }}
                     />
                 </Box>

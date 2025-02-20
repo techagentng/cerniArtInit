@@ -1,9 +1,21 @@
-/* tooltip.css */
+/* Base styles */
 .custom-tooltip {
     background-color: #333;
     color: #fff;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 3px;
     font-size: 14px;
-    z-index: 1000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .custom-tooltip {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-tooltip {
+        font-size: 10px;
+    }
 }
