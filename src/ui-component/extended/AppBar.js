@@ -189,7 +189,7 @@ const AppBar = ({ ...others }) => {
                                         onKeyDown={drawerToggler(false)}
                                     >
                                         <List>
-                                            <Link style={{ textDecoration: 'none' }} href="#" target="_blank">
+                                            <Link style={{ textDecoration: 'none' }} href="/" target="_blank">
                                                 <ListItemButton component="a">
                                                     <ListItemIcon>
                                                         <IconHome2 />
@@ -205,7 +205,7 @@ const AppBar = ({ ...others }) => {
                                                     <ListItemText primary="Projects" />
                                                 </ListItemButton>
                                             </Link>
-                                            <Link style={{ textDecoration: 'none' }} href="#" target="_blank">
+                                            <Link style={{ textDecoration: 'none' }} href="/about" target="_blank">
                                                 <ListItemButton component="a">
                                                     <ListItemIcon>
                                                         <IconBook />
