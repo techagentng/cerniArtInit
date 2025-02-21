@@ -173,7 +173,7 @@ const Landing = () => {
                         paddingX: { xs: 2, sm: 5, md: 2 },
                         zIndex: 3000,
                         position: { xs: 'absolute', md: 'relative' },
-                        bottom: { xs: 80, md: -50 },
+                        bottom: { xs: 25, md: -50 },
                         right: { xs: 0 }
                     }}
                 >
@@ -189,7 +189,7 @@ const Landing = () => {
                         }}
                     />
                 </Box>
-                <Typography variant="h1" sx={{ position: 'absolute', left: 30, bottom: 132, display: { md: 'none' } }}>
+                <Typography variant="h1" sx={{ position: 'absolute', left: 14, bottom: 80, display: { md: 'none' } }}>
                     Art for <br />
                     impact
                 </Typography>
