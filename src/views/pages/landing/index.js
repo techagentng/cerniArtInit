@@ -142,9 +142,9 @@ const Landing = () => {
                     sx={{
                         position: 'absolute',
                         left: { xs: '10px', sm: '20px' },
-                        top: { xs: '20%', sm: '20%' },
+                        top: { xs: '21%', sm: '20%' },
                         transform: 'translateY(-50%)',
-                        width: { xs: '120px', sm: '250px' },
+                        width: { xs: '100px', sm: '250px' },
                         height: 'auto',
                         zIndex: 1
                     }}
@@ -158,7 +158,7 @@ const Landing = () => {
                         margin: '0 auto', // Center the map
                         zIndex: 1,
                         position: 'relative', // Ensure it stays in the flow
-                        top: { xs: '-25%', sm: '32%' }
+                        top: { xs: '-22%', sm: '32%' }
                     }}
                 >
                     <NigerianMap />
@@ -171,10 +171,10 @@ const Landing = () => {
                         alignItems: 'flex-end', // Aligns them vertically
                         width: '49%', // Ensures it takes full width
                         paddingX: { xs: 2, sm: 5, md: 2 },
-                        zIndex: 3000,
+                        zIndex: 300,
                         position: { xs: 'absolute', md: 'relative' },
                         bottom: { xs: 25, md: -50 },
-                        right: { xs: -20 }
+                        right: { xs: -8, md: -460 }
                     }}
                 >
                     {/* Right Image */}
@@ -184,11 +184,19 @@ const Landing = () => {
                         alt="Right Image"
                         sx={{
                             width: { xs: '170px', sm: '250px', md: '300px' },
-                            height: { xs: '200px', sm: '300px', md: '350px' },
+                            height: { xs: '200px', sm: '300px', md: '350px' }
                         }}
                     />
                 </Box>
-                <Typography variant="h1" sx={{ position: 'absolute', left: { md: 420, xs: 20 }, bottom: { md: 80, xs: 85 } }}>
+                <Typography
+                    variant="h1"
+                    sx={{
+                        position: 'absolute',
+                        left: { md: 420, xs: 20 },
+                        bottom: { md: 80, xs: 85 },
+                        fontSize: { xs: '25px', md: '40px' }
+                    }}
+                >
                     Art for impact
                 </Typography>
             </HeroWrapper>

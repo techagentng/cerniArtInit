@@ -25,7 +25,7 @@ const StayInTouchSection = () => {
                     sx={{
                         fontWeight: 'bold',
                         marginBottom: theme.spacing(2),
-                        marginTop: theme.spacing(8),
+                        marginTop: theme.spacing(2),
                         fontFamily: 'DaxlinePro',
                         marginLeft: { xs: '10px', sm: '6px' }
                     }}
