@@ -192,7 +192,7 @@ const Landing = () => {
                     variant="h1"
                     sx={{
                         position: 'absolute',
-                        left: { md: 370, xs: 20 },
+                        left: { md: 330, xs: 20 },
                         bottom: { md: 80, xs: 75 },
                         fontSize: { xs: '25px', md: '40px' }
                     }}
