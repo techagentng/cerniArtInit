@@ -174,7 +174,7 @@ const Landing = () => {
                         zIndex: 3000,
                         position: { xs: 'absolute', md: 'relative' },
                         bottom: { xs: 25, md: -50 },
-                        right: { xs: 0 }
+                        right: { xs: -20 }
                     }}
                 >
                     {/* Right Image */}
@@ -185,15 +185,10 @@ const Landing = () => {
                         sx={{
                             width: { xs: '170px', sm: '250px', md: '300px' },
                             height: { xs: '200px', sm: '300px', md: '350px' },
-                            marginLeft: 'auto'
                         }}
                     />
                 </Box>
-                <Typography variant="h1" sx={{ position: 'absolute', left: 14, bottom: 80, display: { md: 'none', sm: 'none' } }}>
-                    Art for <br />
-                    impact
-                </Typography>
-                <Typography variant="h1" sx={{position:'absolute', left:420, bottom: 80 }}>
+                <Typography variant="h1" sx={{ position: 'absolute', left: { md: 420, xs: 20 }, bottom: { md: 80, xs: 85 } }}>
                     Art for impact
                 </Typography>
             </HeroWrapper>

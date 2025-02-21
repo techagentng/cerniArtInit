@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { cloneElement, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { setCartOpen } from 'store/slices/cartslice';
 import { setFormOpen } from 'store/slices/cartslice';
 import Line from './line.png';
@@ -59,7 +59,7 @@ ElevationScroll.propTypes = {
 
 const AppBar = ({ ...others }) => {
     const [drawerToggle, setDrawerToggle] = useState(false);
-    // const dispatch = useDFdraispatch();
+    const dispatch = useDispatch();
 
     // const totalItems = useSelector((state) => state.cart.totalItems);
 
