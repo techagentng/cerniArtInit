@@ -218,7 +218,7 @@ const Landing = () => {
                             top: '50%',
                             left: '50%',
                             transform: 'translate(-50%, -50%)',
-                            width: '600px',
+                            width: { xs: '90%', sm: '500px', md: '600px' }, // Responsive width
                             bgcolor: 'background.paper',
                             borderRadius: 2,
                             boxShadow: 24,
@@ -229,15 +229,21 @@ const Landing = () => {
                             gap: 3
                         }}
                     >
-                        <Typography variant="h4" sx={{ mb: 2 }}>
+                        <Typography variant="h5" sx={{ mb: 2 }}>
                             How can we help you!
                         </Typography>
-                        <Stack direction="row" spacing={4} justifyContent="center">
+
+                        {/* Stack for Mobile & Desktop */}
+                        <Stack
+                            direction={{ xs: 'column', sm: 'row' }} // Column on mobile, row on larger screens
+                            spacing={2}
+                            justifyContent="center"
+                        >
                             {/* Join Our Team Box */}
                             <Box
                                 onClick={() => handleOpenForm('team')}
                                 sx={{
-                                    width: '200px',
+                                    width: { xs: '100%', sm: '200px' }, // Full width on mobile
                                     height: '200px',
                                     bgcolor: theme.palette.primary.light,
                                     borderRadius: 2,
@@ -263,7 +269,7 @@ const Landing = () => {
                             <Box
                                 onClick={() => handleOpenForm('initiative')}
                                 sx={{
-                                    width: '200px',
+                                    width: { xs: '100%', sm: '200px' }, // Full width on mobile
                                     height: '200px',
                                     bgcolor: theme.palette.secondary.light,
                                     borderRadius: 2,
