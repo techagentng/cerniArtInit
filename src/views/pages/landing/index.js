@@ -158,7 +158,7 @@ const Landing = () => {
                         margin: '0 auto', // Center the map
                         zIndex: 1,
                         position: 'relative', // Ensure it stays in the flow
-                        top: { xs: '-22%', md: '38%' }
+                        top: { xs: '-22%', md: '40%' }
                     }}
                 >
                     <NigerianMap />
