@@ -183,8 +183,8 @@ const Landing = () => {
                         src={mantra}
                         alt="Right Image"
                         sx={{
-                            width: { xs: '120px', sm: '250px', md: '300px' },
-                            height: { xs: '150px', sm: '300px', md: '350px' }
+                            width: { xs: '170px', sm: '250px', md: '300px' },
+                            height: { xs: '200px', sm: '300px', md: '350px' }
                         }}
                     />
                 </Box>
