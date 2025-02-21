@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 // import { keyframes } from '@mui/system';
 import NigerianMap from './NigerianMap';
 import logo from './WhatsApp Image 2025-01-22 at 5.28.png';
-// import mantra from './2025-01-22 at 3.28.png';
+import mantra from './2025-01-22 at 3.28.png';
 import Form2 from 'ui-component/form';
 import Footer2 from 'ui-component/footer';
 import { setFormOpen } from 'store/slices/cartslice';
@@ -127,7 +127,7 @@ const Landing = () => {
                 background={gradient}
                 sx={{
                     position: 'relative',
-                    minHeight: { md: '100vh' },
+                    minHeight: { md: '100vh', xs: '65vh' },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end', // Ensures the yellow box stays at the bottom
@@ -153,63 +153,49 @@ const Landing = () => {
                 {/* Nigerian Map Component */}
                 <Box
                     sx={{
-                        width: '100%',
+                        width: '90%',
                         maxWidth: '700px',
                         margin: '0 auto', // Center the map
                         zIndex: 1,
                         position: 'relative', // Ensure it stays in the flow
-                        top: { xs: '-18%', sm: '20%' } // Adjust positioning
+                        top: { xs: '-25%', sm: '32%' }
                     }}
                 >
                     <NigerianMap />
                 </Box>
 
-                {/* Yellow Box at the Base */}
                 <Box
                     sx={{
-                        position: 'relative',
                         display: 'flex',
-                        width: '100%',
-                        height: { xs: '15px', sm: '200px' },
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-between', // Spaces the text and image
+                        alignItems: 'flex-end', // Aligns them vertically
+                        width: '49%', // Ensures it takes full width
                         paddingX: { xs: 2, sm: 5, md: 2 },
+                        zIndex: 3000,
+                        position: { xs: 'absolute', md: 'relative' },
+                        bottom: { xs: 80, md: -50 },
+                        right: { xs: 0 }
                     }}
                 >
-                    {/* Heading and Description */}
+                    {/* Right Image */}
                     <Box
-                        sx={{
-                            maxWidth: { md: '350px', xs: '300px' },
-                            zIndex: 2
-                        }}
-                    >
-                        <Typography
-                            variant="h1"
-                            sx={{
-                                fontFamily: "Oleo Script', cursive",
-                                fontSize: { xs: '20px', sm: '52px' },
-                                fontWeight: 900,
-                                whiteSpace: 'nowrap',
-                                marginLeft: '230px',
-                                marginTop: '100px'
-                            }}
-                        >
-                            Art for impact
-                        </Typography>
-                    </Box>
-                    {/* Right Image (Inside Yellow Box) */}
-                    {/* <Box
                         component="img"
                         src={mantra}
                         alt="Right Image"
                         sx={{
                             width: { xs: '170px', sm: '250px', md: '300px' },
-                            height: '350px',
-                            animation: `${bounce} 1.5s infinite ease-in-out`,
-                            marginRight: '400px',
-                            marginTop: '100px'
+                            height: { xs: '200px', sm: '300px', md: '350px' },
+                            marginLeft: 'auto'
                         }}
-                    /> */}
+                    />
                 </Box>
+                <Typography variant="h1" sx={{ position: 'absolute', left: 30, bottom: 132, display: { md: 'none' } }}>
+                    Art for <br />
+                    impact
+                </Typography>
+                <Typography variant="h1" sx={{position:'absolute', left:420, bottom: 80 }}>
+                    Art for impact
+                </Typography>
             </HeroWrapper>
 
             <Form2 />
