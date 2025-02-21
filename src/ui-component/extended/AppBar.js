@@ -103,7 +103,7 @@ const AppBar = ({ ...others }) => {
                             <Button color="inherit" component={Link} href="/" target="_blank">
                                 Home
                             </Button>
-                            <Button color="inherit" component={RouterLink} to="#" target="_blank">
+                            <Button color="inherit" component={RouterLink} to="/services" target="_blank">
                                 Projects
                             </Button>
                             {/* <Button color="inherit" component={RouterLink} to="/products" target="_blank">
