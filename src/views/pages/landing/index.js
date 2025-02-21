@@ -127,7 +127,7 @@ const Landing = () => {
                 background={gradient}
                 sx={{
                     position: 'relative',
-                    minHeight: { md: '100vh', xs: '65vh' },
+                    minHeight: { md: '100vh', xs: '75vh' },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end', // Ensures the yellow box stays at the bottom
@@ -183,8 +183,8 @@ const Landing = () => {
                         src={mantra}
                         alt="Right Image"
                         sx={{
-                            width: { xs: '170px', sm: '250px', md: '300px' },
-                            height: { xs: '200px', sm: '300px', md: '350px' }
+                            width: { xs: '120px', sm: '250px', md: '300px' },
+                            height: { xs: '150px', sm: '300px', md: '350px' }
                         }}
                     />
                 </Box>
