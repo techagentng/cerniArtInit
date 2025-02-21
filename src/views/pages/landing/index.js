@@ -189,7 +189,7 @@ const Landing = () => {
                         }}
                     />
                 </Box>
-                <Typography variant="h1" sx={{ position: 'absolute', left: 14, bottom: 80, display: { md: 'none' } }}>
+                <Typography variant="h1" sx={{ position: 'absolute', left: 14, bottom: 80, display: { md: 'none', sm: 'none' } }}>
                     Art for <br />
                     impact
                 </Typography>

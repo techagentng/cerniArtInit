@@ -215,7 +215,7 @@ const AppBar = ({ ...others }) => {
                                             </Link>
                                             <Link style={{ textDecoration: 'none' }} onClick={handleFormClick} target="_blank">
                                                 <ListItemButton component="a">
-                                                    <ListItemIcon>
+                                                    <ListItemIcon >
                                                         <IconCreditCard />
                                                     </ListItemIcon>
                                                     <ListItemText primary="Get Involved" />
