@@ -1,120 +1,101 @@
-import React from 'react';
-import { Container, Typography, Box, Grid, Paper } from '@mui/material';
+import React, { useEffect } from 'react';
 import AppBar from 'ui-component/extended/AppBar';
+import { Typography, Box, Container } from '@mui/material';
+import AboutSectionTwo from './about2ol';
+import Form from 'ui-component/form';
+import Footer from 'ui-component/footer';
+const About = () => {
+    useEffect(() => {
+        document.body.style.overflowX = 'hidden';
+        return () => {
+            document.body.style.overflowX = 'auto';
+        };
+    }, []);
 
-const AboutPage = () => {
     return (
         <>
-            <AppBar/>
-            <Container maxWidth="lg">
-                {/* Page Title */}
-                <Typography variant="h3" gutterBottom textAlign="center" sx={{ fontWeight: 'bold', mt: 4 }}>
-                    About Us
+            {/* AppBar for Navigation */}
+            <AppBar />
+
+            {/* Adding top margin for the content to align below the navigation */}
+            <Container
+                sx={{
+                    textAlign: 'left',
+                    py: 1,
+                    mt: 3,
+                    width: '100%', // Make the container full width
+                    maxWidth: '100%', // Remove the maxWidth to allow full width on desktop
+                    paddingX: { xs: 2, sm: 4, md: 0 } // Adjust padding for responsiveness
+                }}
+            >
+                {/* Main Heading */}
+                <Typography variant="h1" sx={{ fontWeight: 'bold', fontSize: '1.5rem', mb: 1, fontFamily: 'DaxlinePro' }}>
+                    ABOUT US
                 </Typography>
 
-                {/* Section: Mission */}
-                <Paper elevation={3} sx={{ p: 4, my: 3 }}>
-                    <Typography variant="h4" gutterBottom>
-                        Our Mission
+                {/* Subheading */}
+                <Typography
+                    variant="h3"
+                    sx={{ fontWeight: 'bold', mb: 3, fontFamily: 'DaxlinePro', fontSize: { xs: '1.6rem', md: '20px' } }}
+                >
+                    About{' '}
+                    <Typography
+                        component="span"
+                        sx={{
+                            color: '#ff6b77',
+                            fontWeight: 'bold',
+                            fontFamily: 'DaxlinePro',
+                            fontSize: { xs: '1.5rem', md: '20px' }
+                        }}
+                    >
+                        Ceracerni Art Initiative
                     </Typography>
-                    <Typography variant="body1">
-                        Our mission is to create a vibrant and inclusive creative ecosystem that supports emerging and established artists,
-                        provides opportunities for artistic exploration and experimentation, and engages diverse audiences through impactful
-                        creative experiences.
-                    </Typography>
-                </Paper>
+                </Typography>
 
-                {/* Section: Vision */}
-                <Paper elevation={3} sx={{ p: 4, my: 3 }}>
-                    <Typography variant="h4" gutterBottom>
-                        Our Vision
+                {/* Paragraphs */}
+                <Box sx={{ maxWidth: '100%', lineHeight: 1.6 }}>
+                    <Typography
+                        paragraph
+                        sx={{
+                            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.2rem' }, // Responsive font size
+                            fontFamily: 'DaxlinePro' // Consistent font family
+                        }}
+                    >
+                        Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We believe in the
+                        transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and
+                        communities.
                     </Typography>
-                    <Typography variant="body1">
+
+                    <Typography
+                        paragraph
+                        sx={{
+                            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.2rem' }, // Responsive font size
+                            fontFamily: 'DaxlinePro' // Consistent font family
+                        }}
+                    >
+                        Our mission is to deliver a unique nail experience through cutting-edge techniques, premium products, and a deep
+                        commitment to client satisfaction. With our team of expert nail technicians and a focus on artistry and hygiene,
+                        we’re redefining what it means to have your nails done.
+                    </Typography>
+
+                    <Typography
+                        paragraph
+                        sx={{
+                            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.2rem' }, // Responsive font size
+                            fontFamily: 'DaxlinePro' // Consistent font family
+                        }}
+                    >
                         We envision a world where art is accessible to all, where creativity is celebrated, and where artistic expression is
                         valued as an essential component of human experience.
                     </Typography>
-                </Paper>
-
-                {/* Section: Values */}
-                <Paper elevation={3} sx={{ p: 4, my: 3 }}>
-                    <Typography variant="h4" gutterBottom>
-                        Our Values
-                    </Typography>
-                    <Box>
-                        {[
-                            { title: 'Creativity', desc: 'We champion artistic innovation and encourage risk-taking and experimentation.' },
-                            {
-                                title: 'Inclusivity',
-                                desc: 'We embrace diversity in all its forms and strive to create a welcoming environment.'
-                            },
-                            { title: 'Collaboration', desc: 'We believe in the power of collaboration to advance our shared goals.' },
-                            { title: 'Excellence', desc: 'We are committed to artistic excellence and high-quality experiences.' }
-                        ].map((value, index) => (
-                            <Typography key={index} variant="body1" sx={{ mb: 1 }}>
-                                <strong>{value.title}:</strong> {value.desc}
-                            </Typography>
-                        ))}
-                    </Box>
-                </Paper>
-
-                {/* Section: Activities */}
-                <Paper elevation={3} sx={{ p: 4, my: 3 }}>
-                    <Typography variant="h4" gutterBottom>
-                        Our Activities
-                    </Typography>
-                    <Grid container spacing={2}>
-                        {['Artist Residencies', 'Exhibitions', 'Workshops and Masterclasses', 'Public Art Projects', 'Art Events'].map(
-                            (activity, index) => (
-                                <Grid item xs={12} sm={6} key={index}>
-                                    <Typography variant="body1">✅ {activity}</Typography>
-                                </Grid>
-                            )
-                        )}
-                    </Grid>
-                </Paper>
-
-                {/* Section: Impact */}
-                <Paper elevation={3} sx={{ p: 4, my: 3 }}>
-                    <Typography variant="h4" gutterBottom>
-                        Our Impact
-                    </Typography>
-                    <Box>
-                        {[
-                            { title: 'Supporting artistic development', desc: 'Providing artists with valuable opportunities to grow.' },
-                            { title: 'Enriching cultural life', desc: 'Enhancing the cultural vibrancy of communities.' },
-                            { title: 'Fostering community engagement', desc: 'Creating opportunities for all to engage with art.' },
-                            { title: 'Promoting artistic expression', desc: 'Providing a platform for artists to share their work.' }
-                        ].map((impact, index) => (
-                            <Typography key={index} variant="body1" sx={{ mb: 1 }}>
-                                <strong>{impact.title}:</strong> {impact.desc}
-                            </Typography>
-                        ))}
-                    </Box>
-                </Paper>
-
-                {/* Section: Join Us */}
-                <Paper elevation={3} sx={{ p: 4, my: 3, textAlign: 'center' }}>
-                    <Typography variant="h4" gutterBottom>
-                        Join Us
-                    </Typography>
-                    <Typography variant="body1">
-                        Cera Cerni Art Initiative welcomes your support and participation. Together, we can create a thriving art ecosystem
-                        that inspires, enriches, and transforms lives.
-                    </Typography>
-                </Paper>
-
-                {/* Section: Contact */}
-                <Paper elevation={3} sx={{ p: 4, my: 3, textAlign: 'center' }}>
-                    <Typography variant="h4" gutterBottom>
-                        Contact Us
-                    </Typography>
-                    <Typography variant="body1">
-                        📧 <a href="mailto:bm@ceracerniai.org">bm@ceracerniai.org</a>
-                    </Typography>
-                </Paper>
+                </Box>
             </Container>
+
+            <AboutSectionTwo />
+            <Form />
+            <Footer />
         </>
     );
 };
 
-export default AboutPage;
+export default About;

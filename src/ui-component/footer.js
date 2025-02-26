@@ -59,7 +59,7 @@ const Footer = () => {
                         <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 1 }}>
                             <Phone sx={{ marginRight: 2, marginLeft: { xs: '20px' } }} />
                             <Typography variant="body1" sx={{ fontSize: { xs: '14px', sm: '16px' } }}>
-                                08061176101
+                                +234 903 903 5856
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
