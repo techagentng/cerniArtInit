@@ -186,7 +186,7 @@ const Landing = () => {
                             fontSize: { xs: '18px', sm: '24px', md: '52px' }, // Responsive font size
                             color: 'black', // Ensure visibility on yellow
                             textAlign: 'center',
-                            mr:17
+                            mr:37
                         }}
                     >
                         Art for Impact
