@@ -130,8 +130,9 @@ const Landing = () => {
                     minHeight: { md: '100vh', xs: '75vh' },
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'flex-end', // Ensures the yellow box stays at the bottom
-                    overflow: 'hidden' // Prevents overflow issues
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    overflow: 'hidden'
                 }}
             >
                 {/* Left Image (Logo) */}
@@ -141,64 +142,67 @@ const Landing = () => {
                     alt="Left Image"
                     sx={{
                         position: 'absolute',
-                        left: { xs: '10px', sm: '20px' },
-                        top: { xs: '21%', sm: '20%' },
+                        left: { xs: '10px', sm: '20px', md: '30px' },
+                        top: { xs: '10%', sm: '15%', md: '20%' },
                         transform: 'translateY(-50%)',
-                        width: { xs: '100px', sm: '250px' },
+                        width: { xs: '100px', sm: '200px', md: '250px' },
                         height: 'auto',
                         zIndex: 1
                     }}
                 />
 
-                {/* Nigerian Map Component */}
+                {/* Nigerian Map Component - Properly Centered */}
                 <Box
                     sx={{
-                        width: '90%',
+                        width: { xs: '80%', sm: '90%', md: '70%' },
                         maxWidth: '700px',
-                        margin: '0 auto', // Center the map
-                        zIndex: 1,
-                        position: 'relative', // Ensure it stays in the flow
-                        top: { xs: '-22%', md: '43%' }
+                        position: 'relative',
+                        zIndex: 1
                     }}
                 >
                     <NigerianMap />
                 </Box>
 
+                {/* Yellow Container at the Base with Text and Image */}
                 <Box
                     sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between', // Spaces the text and image
-                        alignItems: 'flex-end', // Aligns them vertically
-                        width: '49%', // Ensures it takes full width
-                        paddingX: { xs: 2, sm: 5, md: 2 },
-                        zIndex: 300,
-                        position: { xs: 'absolute', md: 'relative' },
-                        bottom: { xs: 25, md: -50 },
-                        right: { xs: -8, md: -460 }
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        height: { xs: '200px', sm: '250px', md: '300px' },
+                        // backgroundColor: 'yellow',
+                        zIndex: 0,
+                        display: 'flex', // Enable Flexbox
+                        justifyContent: 'center', // Space elements evenly around the box
+                        alignItems: 'center', // Vertically center the content
+                        paddingX: { xs: 2, md: 4 } // Add padding for spacing from edges
                     }}
                 >
-                    {/* Right Image */}
+                    {/* Text Element */}
+                    <Typography
+                        variant="h1"
+                        sx={{
+                            fontSize: { xs: '18px', sm: '24px', md: '52px' }, // Responsive font size
+                            color: 'black', // Ensure visibility on yellow
+                            textAlign: 'center',
+                            mr:17
+                        }}
+                    >
+                        Art for Impact
+                    </Typography>
+
+                    {/* Image Element */}
                     <Box
                         component="img"
-                        src={mantra}
-                        alt="Right Image"
+                        src={mantra} // Reuse your existing image or replace with a new one
+                        alt="Footer Image"
                         sx={{
-                            width: { xs: '170px', sm: '250px', md: '300px' },
-                            height: { xs: '200px', sm: '300px', md: '350px' }
+                            width: { xs: '100px', sm: '150px', md: '400px' }, // Responsive width
+                            height: 'auto' // Maintain aspect ratio
                         }}
                     />
                 </Box>
-                <Typography
-                    variant="h1"
-                    sx={{
-                        position: 'absolute',
-                        left: { md: 330, xs: 20 },
-                        bottom: { md: 80, xs: 75 },
-                        fontSize: { xs: '25px', md: '40px' }
-                    }}
-                >
-                    Art for impact
-                </Typography>
             </HeroWrapper>
 
             <Form2 />

@@ -103,16 +103,22 @@ const AppBar = ({ ...others }) => {
                             <Button color="inherit" component={Link} href="/" target="_blank">
                                 Home
                             </Button>
+                            <Button color="inherit" component={Link} href="/about" target="_blank">
+                                About
+                            </Button>
                             <Button color="inherit" component={RouterLink} to="/services" target="_blank">
-                                Projects
+                                Innitiative
                             </Button>
                             {/* <Button color="inherit" component={RouterLink} to="/products" target="_blank">
                                 Merchandise
                             </Button> */}
-                            <Button color="inherit" component={Link} href="/about" target="_blank">
-                                About
-                            </Button>
 
+                            <Button color="inherit" component={RouterLink} to="/services" target="_blank">
+                                Events
+                            </Button>
+                            <Button color="inherit" component={RouterLink} to="/services" target="_blank">
+                                Donate
+                            </Button>
                             {/* Decorative Line */}
                             <Box
                                 component="img"
@@ -215,7 +221,7 @@ const AppBar = ({ ...others }) => {
                                             </Link>
                                             <Link style={{ textDecoration: 'none' }} onClick={handleFormClick} target="_blank">
                                                 <ListItemButton component="a">
-                                                    <ListItemIcon >
+                                                    <ListItemIcon>
                                                         <IconCreditCard />
                                                     </ListItemIcon>
                                                     <ListItemText primary="Get Involved" />

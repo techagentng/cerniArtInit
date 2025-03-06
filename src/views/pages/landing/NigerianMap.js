@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
+import { motion } from 'framer-motion';
 import { Tooltip } from 'react-tooltip';
-import geoData from './nigeria_lga_boundaries.geojson'; // Ensure this path is correct
-import './tooltip.css'; // Ensure this CSS file exists for tooltip styling
+import geoData from './nigeria_lga_boundaries.geojson';
+import './tooltip.css';
 
-// Hardcoded report counts for each state
 const staticReportCounts = {
     Abia: 10,
     Adamawa: 5,
@@ -46,52 +46,78 @@ const staticReportCounts = {
 };
 
 const NigerianMap = () => {
-    // Get the count for a given state directly from the static data
-    const getCountForState = (stateName) => {
-        return staticReportCounts[stateName.trim()] || 0;
-    };
+    const [tooltipContent, setTooltipContent] = useState('');
 
-    // Determine the fill color based on the report count
-    const getFillColor = (count) => {
-        return count > 0 ? '#0e4934' : '#ffff'; // Green if count > 0, otherwise white
-    };
+    const getCountForState = (stateName) => staticReportCounts[stateName.trim()] || 0;
 
     return (
         <>
-            <ComposableMap
-                projection="geoMercator"
-                projectionConfig={{
-                    scale: 4500,
-                    center: [8, 9] // Center the map on Nigeria
-                }}
-                width={1000}
-                height={800}
-            >
+            <ComposableMap projection="geoMercator" projectionConfig={{ scale: 6000, center: [8, 9] }} width={1500} height={1200}>
+                {/* Define patterns for Borno and Niger */}
+                <defs>
+                    <pattern id="bornoPattern" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="https://example.com/borno-image.jpg" width="100" height="100" />
+                    </pattern>
+                    <pattern id="nigerPattern" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="https://example.com/niger-image.jpg" width="100" height="100" />
+                    </pattern>
+                </defs>
+
                 <Geographies geography={geoData}>
-                    {({ geographies }) => {
-                        console.log('Geographies:', geographies); // Debugging
-                        return geographies.map((geo) => {
+                    {({ geographies }) =>
+                        geographies.map((geo) => {
                             const stateName = geo.properties.admin1Name.trim();
                             const count = getCountForState(stateName);
+                            const isBorno = stateName === 'Borno';
+                            const isNiger = stateName === 'Niger';
 
                             return (
-                                <Geography
+                                <motion.g
                                     key={geo.rsmKey}
-                                    geography={geo}
-                                    style={{
-                                        default: { fill: getFillColor(count), stroke: '#ffff', strokeWidth: 2.5 }, // Increased stroke width
-                                        hover: { fill: '#0e4934', stroke: '#000', strokeWidth: 0.75 },
-                                        pressed: { fill: '#E42', stroke: '#000', strokeWidth: 0.75 }
-                                    }}
+                                    initial={{ scale: 1.05 }}
+                                    whileHover={{ scale: 1.25 }}
+                                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                                    onMouseEnter={() => setTooltipContent(stateName)}
+                                    onMouseLeave={() => setTooltipContent('')}
                                     data-tooltip-id="state-tooltip"
-                                />
+                                >
+                                    <Geography
+                                        geography={geo}
+                                        style={{
+                                            default: {
+                                                fill: isBorno
+                                                    ? 'url(#bornoPattern)'
+                                                    : isNiger
+                                                    ? 'url(#nigerPattern)'
+                                                    : count > 0
+                                                    ? '#0e4934'
+                                                    : '#ffff',
+                                                stroke: '#fff',
+                                                strokeWidth: 3
+                                            },
+                                            hover: {
+                                                fill: isBorno ? 'url(#bornoPattern)' : isNiger ? 'url(#nigerPattern)' : '#0e4934',
+                                                stroke: '#000',
+                                                strokeWidth: 1
+                                            },
+                                            pressed: {
+                                                fill: isBorno ? 'url(#bornoPattern)' : isNiger ? 'url(#nigerPattern)' : '#E42',
+                                                stroke: '#000',
+                                                strokeWidth: 1
+                                            }
+                                        }}
+                                    />
+                                </motion.g>
                             );
-                        });
-                    }}
+                        })
+                    }
                 </Geographies>
             </ComposableMap>
-            {/* Tooltip for displaying state information */}
-            <Tooltip id="state-tooltip" className="custom-tooltip" />
+
+            {/* Tooltip with large text */}
+            <Tooltip id="state-tooltip" className="custom-tooltip">
+                <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#fff' }}>{tooltipContent}</span>
+            </Tooltip>
         </>
     );
 };

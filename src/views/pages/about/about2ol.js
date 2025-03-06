@@ -5,23 +5,19 @@ import ii from './ii.png'; // Assuming 'ii.png' is the image source
 const initiatives = [
     {
         title: 'Supporting Artistic Development',
-        description: 'We are providing artists with valuable opportunities to grow and develop their artistic practice.',
-        
+        description: 'We are providing artists with valuable opportunities to grow and develop their artistic practice.'
     },
     {
         title: 'Enriching Cultural Life',
-        description: 'We are enhancing the cultural vibrancy of communities through our exhibitions, public art projects, and art events.',
-        
+        description: 'We are enhancing the cultural vibrancy of communities through our exhibitions, public art projects, and art events.'
     },
     {
         title: 'Fostering Community Engagement',
-        description: 'We are creating opportunities for individuals of all ages and backgrounds to engage with art and artists.',
-        
+        description: 'We are creating opportunities for individuals of all ages and backgrounds to engage with art and artists.'
     },
     {
         title: 'Promoting Artistic Expression',
-        description: 'We are providing a platform for artists to share their work and connect with audiences.',
-    
+        description: 'We are providing a platform for artists to share their work and connect with audiences.'
     }
 ];
 const AboutSectionTwo = () => {
