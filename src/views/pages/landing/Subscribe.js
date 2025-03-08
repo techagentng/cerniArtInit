@@ -18,7 +18,7 @@ const Jumbo = styled(Paper)({
 
 const ButtonSX = {
     borderRadius: 2,
-    backgroundColor: 'success',
+    backgroundColor: '#ff6b77',
     color: 'white',
     padding: '12px 130px', // Increased padding for longer buttons
     width: '100%', // Increased from 80% to 90% for longer width
@@ -49,7 +49,7 @@ const Subscribe = () => {
                                         width: '100%'
                                     }}
                                 >
-                                    Subscribe to our newsletter for updates.
+                                    Contribution to reducing Air pollution with the use of Technology.
                                 </Typography>
                                 <Typography
                                     variant="subtitle2"
