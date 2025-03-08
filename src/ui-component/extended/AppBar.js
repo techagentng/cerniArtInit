@@ -116,7 +116,7 @@ const AppBar = ({ ...others }) => {
                             <Button color="inherit" component={RouterLink} to="/services" target="_blank">
                                 Events
                             </Button>
-                            <Button color="inherit" component={RouterLink} to="/services" target="_blank">
+                            <Button color="inherit" component={RouterLink} to="/donation" target="_blank">
                                 Donate
                             </Button>
                             {/* Decorative Line */}

@@ -12,6 +12,7 @@ const MaintenanceUnderConstruction = Loadable(lazy(() => import('views/pages/mai
 const Products = Loadable(lazy(() => import('views/pages/product')));
 const Checkout = Loadable(lazy(() => import('views/pages/checkout')));
 const About = Loadable(lazy(() => import('views/pages/about')));
+const Donation = Loadable(lazy(() => import('views/pages/donation')));
 const Services = Loadable(lazy(() => import('views/pages/servicies')));
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
@@ -26,6 +27,10 @@ const AuthenticationRoutes = {
         {
             path: '/products',
             element: <Products />
+        },
+        {
+            path: '/donation',
+            element: <Donation />
         },
         {
             path: '/about',

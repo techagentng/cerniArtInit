@@ -4,7 +4,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setFormOpen } from 'store/slices/cartslice'; // Adjust the path based on your project structure
 import FadeInWhenVisible from './Animation2';
-
+import { Link } from 'react-router-dom';
 const Jumbo = styled(Paper)({
     display: 'flex',
     alignItems: 'center',
@@ -65,14 +65,18 @@ const Subscribe = () => {
                                 </Typography>
                                 <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="center" sx={{ width: '100%' }}>
                                     <Stack spacing={1} alignItems="center">
+                                        <Link>
                                         <Button variant="contained" color="success" sx={ButtonSX} onClick={handleFormClick}>
                                             Get Involved
                                         </Button>
+                                        </Link>
                                     </Stack>
                                     <Stack spacing={1} alignItems="center">
-                                        <Button variant="contained" color="success" sx={ButtonSX}>
-                                            Donation
-                                        </Button>
+                                        <Link to="/donation">
+                                            <Button variant="contained" color="success" sx={ButtonSX}>
+                                                Donation
+                                            </Button>
+                                     </Link>
                                     </Stack>
                                 </Stack>
                             </Stack>
