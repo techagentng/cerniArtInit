@@ -15,6 +15,7 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import Subscribe from './Subscribe';
 
 // const bounce = keyframes`
 //   0%, 100% { transform: translateY(-50%); }
@@ -204,7 +205,7 @@ const Landing = () => {
                     />
                 </Box>
             </HeroWrapper>
-
+            <Subscribe/>
             <Form2 />
             <Box
                 sx={{
