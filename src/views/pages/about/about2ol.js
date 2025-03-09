@@ -31,7 +31,7 @@ const AboutSectionTwo = () => {
             <Typography variant="h1" sx={{ fontWeight: 'bold', fontFamily: 'DaxlinePro' }}>
                 Our Impact
             </Typography>
-            <Grid container spacing={4} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
+            <Grid container spacing={4} sx={{ justifyContent: 'space-between'}}>
                 {/* Left Column: Image */}
                 <Grid item xs={12} md={4}>
                     <Box
@@ -58,10 +58,10 @@ const AboutSectionTwo = () => {
                 </Grid>
 
                 {/* Right Column: Text Content */}
-                <Grid item xs={12} md={7} sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                <Grid item xs={12} md={8} sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                     <Box sx={{ py: 4, px: 3, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
                         <Paper elevation={3} sx={{ maxWidth: 800, mx: 'auto', p: 4, borderRadius: 3 }}>
-                            <Typography variant="h4" fontWeight="bold" align="center" color="primary" gutterBottom>
+                            <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
                                 Cera Cerni Art Initiative
                             </Typography>
                             <Typography variant="h6" align="center" color="text.secondary" gutterBottom>

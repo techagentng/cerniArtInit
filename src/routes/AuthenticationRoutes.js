@@ -41,7 +41,7 @@ const AuthenticationRoutes = {
             element: <Checkout />
         },
         {
-            path: '/services',
+            path: '/initiative',
             element: <Services />
         },
         {

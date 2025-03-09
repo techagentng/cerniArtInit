@@ -52,8 +52,13 @@ const NigerianMap = () => {
 
     return (
         <>
-            <ComposableMap projection="geoMercator" projectionConfig={{ scale: 6000, center: [8, 9] }} width={1500} height={1200}>
-                {/* Define patterns for Borno and Niger */}
+            <ComposableMap
+                projection="geoMercator"
+                projectionConfig={{ scale: 6000, center: [8, 9] }}
+                width={1500}
+                height={1200}
+                style={{ overflow: 'visible' }}
+            >
                 <defs>
                     <pattern id="bornoPattern" patternUnits="userSpaceOnUse" width="100" height="100">
                         <image href="https://example.com/borno-image.jpg" width="100" height="100" />
@@ -70,12 +75,29 @@ const NigerianMap = () => {
                             const count = getCountForState(stateName);
                             const isBorno = stateName === 'Borno';
                             const isNiger = stateName === 'Niger';
-
+                            const hoverScale =
+                                stateName === 'Niger'
+                                    ? 4
+                                    : stateName === 'Kaduna'
+                                    ? 8
+                                    : stateName === 'Kastina'
+                                    ? 4
+                                    : stateName === 'Ondo'
+                                    ? 5
+                                    : stateName === 'Benue'
+                                    ? 8
+                                    : stateName === 'Kogi'
+                                    ? 8
+                                    : stateName === 'Lagos'
+                                    ? 8
+                                    : stateName === 'Kwara'
+                                    ? 5
+                                    : 2.5;
                             return (
                                 <motion.g
                                     key={geo.rsmKey}
-                                    initial={{ scale: 1.05 }}
-                                    whileHover={{ scale: 1.25 }}
+                                    initial={{ scale: 1.05, zIndex: 1 }} // Default zIndex for non-hovered states
+                                    whileHover={{ scale: hoverScale, zIndex: 100 }} // Higher zIndex for hovered state
                                     transition={{ duration: 0.3, ease: 'easeOut' }}
                                     onMouseEnter={() => setTooltipContent(stateName)}
                                     onMouseLeave={() => setTooltipContent('')}
@@ -114,8 +136,7 @@ const NigerianMap = () => {
                 </Geographies>
             </ComposableMap>
 
-            {/* Tooltip with large text */}
-            <Tooltip id="state-tooltip" className="custom-tooltip">
+            <Tooltip id="state-tooltip" className="custom-tooltip" place="top" offset={20}>
                 <span style={{ fontSize: '20px', fontWeight: 'bold', color: '#fff' }}>{tooltipContent}</span>
             </Tooltip>
         </>
