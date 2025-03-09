@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 // Images
 import Hero from './Picture4.jpg';
-
+import Hero2 from './Picture1.jpg';
 const HeaderImage = styled('img')({
     position: 'relative',
     width: '100%',
@@ -160,7 +160,7 @@ const HeaderSection = () => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                    <HeaderImage src={Hero} />
+                    <HeaderImage src={Hero2} />
                 </Grid>
             </Grid>
         </Container>

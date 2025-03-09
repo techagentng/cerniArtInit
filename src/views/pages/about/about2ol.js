@@ -28,7 +28,7 @@ const initiatives = [
 const AboutSectionTwo = () => {
     return (
         <Container sx={{ py: 6 }}>
-            <Typography variant="h1" sx={{ fontWeight: 'bold'}}>
+            <Typography variant="h1" sx={{ fontWeight: 'bold', fontFamily: 'DaxlinePro' }}>
                 Our Impact
             </Typography>
             <Grid container spacing={4} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
