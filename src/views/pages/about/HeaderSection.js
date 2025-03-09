@@ -6,7 +6,7 @@ import { Container, Grid, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 // Images
-import Hero from 'assets/images/about/nupo-deyon-daniel-67ruAEYmp4c-unsplash 1 (1).png';
+import Hero from './Picture4.jpg';
 
 const HeaderImage = styled('img')({
     position: 'relative',
@@ -40,7 +40,7 @@ const HeaderSection = () => {
                             >
                                 <Stack spacing={1}>
                                     <Typography textAlign={{ xs: 'center', md: 'left' }} variant="h1" sx={headerSX}>
-                                        Strengthening Voices for Accountability and Transparency
+                                        About Cera Cerni Art initiative
                                     </Typography>
                                 </Stack>
                             </motion.div>
@@ -55,9 +55,14 @@ const HeaderSection = () => {
                                     variant="body1"
                                     sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: '50%' }}
                                 >
-                                    CitizenX Nigeria was founded on the belief that every citizen deserves a voice in governance. By
-                                    regularly monitoring and measuring performance over time, we aim to encourage accountability and
-                                    transparency, making significant strides in citizen engagement and digital governance.
+                                    Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We
+                                    believe in the transformative power of art and its ability to inspire, challenge, and connect
+                                    individuals across cultures and communities. <br />
+                                    Our mission is to deliver a unique nail experience through cutting-edge techniques, premium products,
+                                    and a deep commitment to client satisfaction. With our team of expert nail technicians and a focus on
+                                    artistry and hygiene, we’re redefining what it means to have your nails done. We envision a world where
+                                    art is accessible to all, where creativity is celebrated, and where artistic expression is valued as an
+                                    essential component of human experience.
                                 </Typography>
                             </motion.div>
                         </Grid>
@@ -72,30 +77,90 @@ const HeaderSection = () => {
                         animate={{ opacity: 1, translateY: 0 }}
                         transition={{ type: 'spring', stiffness: 150, damping: 30 }}
                     >
-                        <Stack spacing={1}>
-                            <Typography textAlign={{ xs: 'center', md: 'left' }} variant="h1" sx={headerSX}>
-                                Our Purpose: The Future of Citizen Engagement
-                            </Typography>
-                        </Stack>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, translateY: 550 }}
                         animate={{ opacity: 1, translateY: 0 }}
                         transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
                     >
-                        <Typography
-                            textAlign={{ xs: 'center', md: 'left' }}
-                            color="text.primary"
-                            variant="body1"
-                            sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: '100%' }}
-                        >
-                            As we look to the future, CitizenX Nigeria is committed to continuing its mission of empowering citizens and
-                            enhancing community engagement. We are constantly evolving, adding new features, and finding innovative ways to
-                            make your voice heard. The future of citizen engagement is here, and it’s in your hands. With the CitizenX
-                            platform, you’re not just a spectator—you’re an active participant in shaping the future of your local community
-                            in Nigeria. Join us and be part of the change.
+                        <Typography variant="h1" fontWeight="bold" gutterBottom>
+                            Our Mission
+                        </Typography>
+
+                        <Typography variant="h4" fontWeight="bold" gutterBottom>
+                            Project Overview
+                        </Typography>
+
+                        <Typography variant="body1" paragraph>
+                            The project intends to utilize the installation of <strong>One Wall Mural</strong> using{' '}
+                            <strong>AIR-INK©</strong> at an iconic/strategic location within each of the 36 states of the Nigerian
+                            Federation. This aims to highlight the problem of poor air quality and drive both local and national
+                            conversations to influence policy actions on improving air quality in Nigeria.
+                        </Typography>
+
+                        <Typography variant="body1" paragraph>
+                            <strong>AIR-INK©</strong> is a proprietary brand of ink and composite products made by condensing carbon-based
+                            gaseous effluents generated from air pollution due to incomplete combustion of fossil fuels. This innovative
+                            technology seeks to reverse the negative effects of poor air quality.
+                        </Typography>
+
+                        <Typography variant="h4" fontWeight="bold" gutterBottom>
+                            Women Empowerment Programme
+                        </Typography>
+
+                        <Typography variant="body1">
+                            The project also aims to organize an empowerment programme for female entrepreneurs and women in business within
+                            the <strong>Creative Economy</strong> of each state in the Federation. This initiative will harness the power of
+                            creativity to support solutions for environmental challenges.
                         </Typography>
                     </motion.div>
+                </Grid>
+            </Grid>
+            <Grid
+                container
+                justifyContent="space-between"
+                alignItems="center"
+                sx={{ mt: { xs: 10, sm: 6, md: 18.75 }, mb: { xs: 2.5, md: 10 } }}
+            >
+                <Grid item xs={12}>
+                    <Grid container spacing={6}>
+                        <Grid item xs={12}>
+                            <motion.div
+                                initial={{ opacity: 0, translateY: 550 }}
+                                animate={{ opacity: 1, translateY: 0 }}
+                                transition={{ type: 'spring', stiffness: 150, damping: 30 }}
+                            >
+                                <Stack spacing={1}>
+                                    <Typography textAlign={{ xs: 'center', md: 'left' }} variant="h1" sx={headerSX}>
+                                    Our Focus
+                                    </Typography>
+                                </Stack>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, translateY: 550 }}
+                                animate={{ opacity: 1, translateY: 0 }}
+                                transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
+                            >
+                                <Typography
+                                    textAlign={{ xs: 'center', md: 'left' }}
+                                    color="text.primary"
+                                    variant="body1"
+                                    sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: '50%' }}
+                                >
+                                    The project intends to utilize the installation of One Wall Mural using AIR-INK© at an iconic/strategic
+                                    location within each of the 36 states of the Nigerian Federation, to accentuate the problem of poor air
+                                    quality with the view to drive local & National conversations aimed at positively influencing policy
+                                    actions on improved air quality in Nigeria. AIR-INK is a proprietary brand of ink and composites
+                                    products made by condensing carbon-based gaseous effluents generated by air pollution due to incomplete
+                                    combustion of fossil fuels. This is a technology innovation that attempt to reverse the poor air
+                                    quality.
+                                </Typography>
+                            </motion.div>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                    <HeaderImage src={Hero} />
                 </Grid>
             </Grid>
         </Container>
