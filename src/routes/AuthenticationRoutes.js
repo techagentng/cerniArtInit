@@ -14,6 +14,7 @@ const Checkout = Loadable(lazy(() => import('views/pages/checkout')));
 const About = Loadable(lazy(() => import('views/pages/about')));
 const Donation = Loadable(lazy(() => import('views/pages/donation')));
 const Services = Loadable(lazy(() => import('views/pages/servicies')));
+const Events = Loadable(lazy(() => import('views/events')));
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
 const AuthenticationRoutes = {
@@ -43,6 +44,10 @@ const AuthenticationRoutes = {
         {
             path: '/initiative',
             element: <Services />
+        },
+        {
+            path: '/events',
+            element: <Events />
         },
         {
             path: '/pages/coming-soon1',

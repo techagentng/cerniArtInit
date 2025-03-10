@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Modal, IconButton, Button, TextField, Stack, useTheme, CircularProgress } from '@mui/material';
+import { Box, Typography, Modal, IconButton, Button, TextField, Stack, Grid, useTheme, CircularProgress } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import AppBar from 'ui-component/extended/AppBar';
 import { styled } from '@mui/material/styles';
@@ -16,6 +16,9 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Subscribe from './Subscribe';
+import SchoolIcon from '@mui/icons-material/School'; // For Educate
+import ForumIcon from '@mui/icons-material/Forum'; // For Drive Conversations
+import StarIcon from '@mui/icons-material/Star'; // For Inspire
 
 // const bounce = keyframes`
 //   0%, 100% { transform: translateY(-50%); }
@@ -120,7 +123,25 @@ const Landing = () => {
                 });
         }
     });
+    const ObjectiveSection = styled(Box)(({ theme }) => ({
+        padding: theme.spacing(6, 2),
+        backgroundColor: '#f5f5f5', // Light grey background for contrast
+        [theme.breakpoints.down('sm')]: {
+            padding: theme.spacing(4, 1)
+        }
+    }));
 
+    const ObjectiveItem = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: theme.spacing(3),
+        backgroundColor: '#e0e0e0', // Grey inner padding
+        borderRadius: theme.shape.borderRadius,
+        height: '100%',
+        textAlign: 'center'
+    }));
     return (
         <>
             <AppBar open={isFormOpen} setOpen={() => dispatch(setFormOpen(!isFormOpen))} />
@@ -187,7 +208,7 @@ const Landing = () => {
                             fontSize: { xs: '18px', sm: '24px', md: '52px' }, // Responsive font size
                             color: 'black', // Ensure visibility on yellow
                             textAlign: 'center',
-                            mr:37
+                            mr: 37
                         }}
                     >
                         Art for Impact
@@ -205,7 +226,41 @@ const Landing = () => {
                     />
                 </Box>
             </HeroWrapper>
-            <Subscribe/>
+            {/* New Objective Section */}
+            <ObjectiveSection>
+                <Typography variant="h1" sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center', mb: 4 }}>
+                    Our Objective
+                </Typography>
+                <Grid container spacing={3} justifyContent="center">
+                    <Grid item xs={12} sm={6} md={4}>
+                        <ObjectiveItem>
+                            <SchoolIcon sx={{ fontSize: 80, color: '#f44336' }} /> {/* Red */}
+                            <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
+                                Educate the citizenry about mitigation measures against Air Pollution.
+                            </Typography>
+                        </ObjectiveItem>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <ObjectiveItem>
+                            <ForumIcon sx={{ fontSize: 80, color: '#4caf50' }} /> {/* Green */}
+                            <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
+                                Drive conversations about actionable policies against Air pollution.
+                            </Typography>
+                        </ObjectiveItem>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <ObjectiveItem>
+                            <StarIcon sx={{ fontSize: 80, color: '#ffeb3b' }} /> {/* Yellow */}
+                            <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
+                                Inspire a new generation of young creatives to embrace their skills and talents for personal growth,
+                                community impact and national development.
+                            </Typography>
+                        </ObjectiveItem>
+                    </Grid>
+                </Grid>
+            </ObjectiveSection>
+
+            <Subscribe />
             <Form2 />
             <Box
                 sx={{
