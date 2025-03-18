@@ -36,7 +36,7 @@ const Jumbo = styled(Paper)({
 // Button styling with orange accent from the document
 const ButtonSX = {
     borderRadius: 4,
-    backgroundColor: '#FF6200', // Orange from "CIAIR 36"
+    backgroundColor: '#FF6200y', // Orange from "CIAIR 36"
     color: 'white',
     padding: '12px 30px',
     width: '100%',

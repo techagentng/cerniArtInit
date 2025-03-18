@@ -16,9 +16,10 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Subscribe from './Subscribe';
-import SchoolIcon from '@mui/icons-material/School'; // For Educate
-import ForumIcon from '@mui/icons-material/Forum'; // For Drive Conversations
-import StarIcon from '@mui/icons-material/Star'; // For Inspire
+import SchoolIcon from '@mui/icons-material/School';
+import ForumIcon from '@mui/icons-material/Forum';
+import StarIcon from '@mui/icons-material/Star';
+import { motion } from 'framer-motion';
 
 // const bounce = keyframes`
 //   0%, 100% { transform: translateY(-50%); }
@@ -158,21 +159,20 @@ const Landing = () => {
                 }}
             >
                 {/* Left Image (Logo) */}
- <Box
-    component="img"
-    src={logo}
-    alt="Left Image"
-    sx={{
-        position: 'absolute',
-        left: { xs: '10px', sm: '20px', md: '30px' },
-        top: { xs: '20%', sm: '15%', md: '20%' }, // Increased top for mobile
-        transform: 'translateY(-40%)', // Adjusted for better centering
-        width: { xs: '120px', sm: '200px', md: '250px' }, // Slightly larger for xs
-        height: 'auto',
-        zIndex: 1
-    }}
-/>
-
+                <Box
+                    component="img"
+                    src={logo}
+                    alt="Left Image"
+                    sx={{
+                        position: 'absolute',
+                        left: { xs: '10px', sm: '20px', md: '30px' },
+                        top: { xs: '20%', sm: '15%', md: '20%' }, // Increased top for mobile
+                        transform: 'translateY(-40%)', // Adjusted for better centering
+                        width: { xs: '120px', sm: '200px', md: '250px' }, // Slightly larger for xs
+                        height: 'auto',
+                        zIndex: 1
+                    }}
+                />
 
                 {/* Nigerian Map Component - Properly Centered */}
                 <Box
@@ -180,7 +180,8 @@ const Landing = () => {
                         width: { xs: '80%', sm: '90%', md: '70%' },
                         maxWidth: '700px',
                         position: 'relative',
-                        zIndex: 1
+                        zIndex: 1,
+                        marginTop: { xs: '200px'}
                     }}
                 >
                     <NigerianMap />
@@ -191,13 +192,13 @@ const Landing = () => {
                     sx={{
                         position: 'absolute',
                         bottom: 0,
+                        display: { xs: 'none', sm: 'flex', md: 'flex' },
                         left: 0,
                         width: '100%',
                         height: { xs: '200px', sm: '250px', md: '300px' },
                         // backgroundColor: 'yellow',
                         zIndex: 0,
-                        display: 'flex', // Enable Flexbox
-                        justifyContent: 'center', // Space elements evenly around the box
+                        justifyContent: 'center',
                         alignItems: 'center', // Vertically center the content
                         paddingX: { xs: 2, md: 4 } // Add padding for spacing from edges
                     }}
@@ -218,13 +219,48 @@ const Landing = () => {
                     {/* Image Element */}
                     <Box
                         component="img"
-                        src={mantra} // Reuse your existing image or replace with a new one
+                        src={mantra}
                         alt="Footer Image"
                         sx={{
-                            width: { xs: '100px', sm: '150px', md: '400px' }, // Responsive width
+                            width: { xs: '100px', sm: '300px', md: '400px' }, // Increased size for mobile
                             height: 'auto' // Maintain aspect ratio
                         }}
                     />
+                </Box>
+                <Box
+                    sx={{
+                        display: { xs: 'block', sm: 'none' }, // Hide on tablets & desktop
+                        overflow: 'hidden', // Prevent text overflow
+                        whiteSpace: 'nowrap', // Prevent wrapping
+                        position: 'relative',
+                        width: '100%' // Ensure it takes full width
+                    }}
+                >
+                    <motion.div
+                        initial={{ x: '100%' }} // Start off-screen on the right
+                        animate={{ x: '-100%' }} // Move fully left
+                        transition={{
+                            repeat: Infinity, // Loop infinitely
+                            duration: 10, // Speed of scrolling (increase for slower)
+                            ease: 'linear' // Smooth continuous motion
+                        }}
+                        style={{ display: 'inline-block' }} // Ensures smooth animation
+                    >
+                        <Typography
+                            variant="h1"
+                            sx={{
+                                fontSize: { xs: '24px', sm: '32px' },
+                                fontWeight: 'bold',
+                                color: '#333',
+                                textAlign: 'center',
+                                display: 'inline-block', // Ensures seamless looping
+                                marginRight: '150px',
+                                marginTop: {xs:'90px'}
+                            }}
+                        >
+                            ART FOR IMPACT
+                        </Typography>
+                    </motion.div>
                 </Box>
             </HeroWrapper>
             {/* New Objective Section */}
