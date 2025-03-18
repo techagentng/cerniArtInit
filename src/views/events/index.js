@@ -195,7 +195,7 @@ const Events = () => {
                             fontFamily: 'DaxlinePro'
                         }}
                     >
-                        BRIDAL
+                        Event show room
                     </Typography>
 
                     {/* Image Grid */}

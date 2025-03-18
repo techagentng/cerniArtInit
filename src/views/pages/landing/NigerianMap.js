@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Tooltip } from 'react-tooltip';
 import geoData from './nigeria_lga_boundaries.geojson';
 import './tooltip.css';
-
 const staticReportCounts = {
     Abia: 10,
     Adamawa: 5,
@@ -47,6 +46,7 @@ const staticReportCounts = {
 
 const NigerianMap = () => {
     const [tooltipContent, setTooltipContent] = useState('');
+    const [hoveredState, setHoveredState] = useState(null);
 
     const getCountForState = (stateName) => staticReportCounts[stateName.trim()] || 0;
 
@@ -61,47 +61,43 @@ const NigerianMap = () => {
             >
                 <defs>
                     <pattern id="bornoPattern" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="https://example.com/borno-image.jpg" width="100" height="100" />
+                        <image href="https://picsum.photos/100/100?random=1" width="100" height="100" />
                     </pattern>
                     <pattern id="nigerPattern" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="https://example.com/niger-image.jpg" width="100" height="100" />
+                        <image href="https://picsum.photos/100/100?random=2" width="100" height="100" />
                     </pattern>
                 </defs>
 
                 <Geographies geography={geoData}>
-                    {({ geographies }) =>
-                        geographies.map((geo) => {
-                            const stateName = geo.properties.admin1Name.trim();
+                    {({ geographies }) => {
+                        // Ensure hovered state is last in the array
+                        const sortedGeographies = [...geographies].sort(
+                            (a, b) =>
+                                (a.properties.admin1Name === hoveredState ? 1 : 0) - (b.properties.admin1Name === hoveredState ? 1 : 0)
+                        );
+
+                        return sortedGeographies.map((geo) => {
+                            const stateName = geo.properties.admin1Name?.trim() || 'Unknown';
                             const count = getCountForState(stateName);
                             const isBorno = stateName === 'Borno';
                             const isNiger = stateName === 'Niger';
-                            const hoverScale =
-                                stateName === 'Niger'
-                                    ? 4
-                                    : stateName === 'Kaduna'
-                                    ? 8
-                                    : stateName === 'Kastina'
-                                    ? 4
-                                    : stateName === 'Ondo'
-                                    ? 5
-                                    : stateName === 'Benue'
-                                    ? 8
-                                    : stateName === 'Kogi'
-                                    ? 8
-                                    : stateName === 'Lagos'
-                                    ? 8
-                                    : stateName === 'Kwara'
-                                    ? 5
-                                    : 2.5;
+
                             return (
                                 <motion.g
                                     key={geo.rsmKey}
-                                    initial={{ scale: 1.05, zIndex: 1 }} // Default zIndex for non-hovered states
-                                    whileHover={{ scale: hoverScale, zIndex: 100 }} // Higher zIndex for hovered state
+                                    initial={{ scale: 1 }}
+                                    animate={{ scale: hoveredState === stateName ? 3.1 : 1 }} // Scale only hovered state
                                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                                    onMouseEnter={() => setTooltipContent(stateName)}
-                                    onMouseLeave={() => setTooltipContent('')}
+                                    onMouseEnter={() => {
+                                        setHoveredState(stateName);
+                                        setTooltipContent(stateName);
+                                    }}
+                                    onMouseLeave={() => {
+                                        setHoveredState(null);
+                                        setTooltipContent('');
+                                    }}
                                     data-tooltip-id="state-tooltip"
+                                    style={{ pointerEvents: hoveredState && hoveredState !== stateName ? 'none' : 'auto' }} // Disable interaction for non-hovered states
                                 >
                                     <Geography
                                         geography={geo}
@@ -113,7 +109,7 @@ const NigerianMap = () => {
                                                     ? 'url(#nigerPattern)'
                                                     : count > 0
                                                     ? '#0e4934'
-                                                    : '#ffff',
+                                                    : '#fff',
                                                 stroke: '#fff',
                                                 strokeWidth: 3
                                             },
@@ -131,8 +127,8 @@ const NigerianMap = () => {
                                     />
                                 </motion.g>
                             );
-                        })
-                    }
+                        });
+                    }}
                 </Geographies>
             </ComposableMap>
 
