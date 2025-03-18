@@ -5,7 +5,7 @@ import AppBar from 'ui-component/extended/AppBar';
 import { styled } from '@mui/material/styles';
 // import { keyframes } from '@mui/system';
 import NigerianMap from './NigerianMap';
-import logo from './WhatsApp Image 2025-01-22 at 5.28.png';
+import logo from 'assets/images/WhatsApp Image 2025-01-22 at 5.28.png';
 import mantra from './2025-01-22 at 3.28.png';
 import Form2 from 'ui-component/form';
 import Footer2 from 'ui-component/footer';
@@ -20,11 +20,6 @@ import SchoolIcon from '@mui/icons-material/School';
 import ForumIcon from '@mui/icons-material/Forum';
 import StarIcon from '@mui/icons-material/Star';
 import { motion } from 'framer-motion';
-
-// const bounce = keyframes`
-//   0%, 100% { transform: translateY(-50%); }
-//   50% { transform: translateY(-55%); }
-// `;
 
 const gradients = [
     'linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)',

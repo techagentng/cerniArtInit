@@ -3,7 +3,7 @@ import { Typography, Box, Divider, Grid, List, ListItem, ListItemText, Button } 
 // import Navigation from 'ui-component/Header';
 import Footer from 'ui-component/footer';
 import Form from 'ui-component/form';
-import bridalImage from './f2.png'; 
+import bridalImage from 'assets/images/xxxxxxxx.jpg';
 import AppBar from 'ui-component/extended/AppBar';
 
 const Events = () => {
@@ -51,22 +51,8 @@ const Events = () => {
                         fontSize: '1.5rem'
                     }}
                 >
-                    Our Events
+                    Our Events & Showcase
                 </Typography>
-
-                {/* Smaller Heading */}
-                <Typography
-                    variant="h3"
-                    sx={{
-                        textAlign: 'left',
-                        fontWeight: 'bold',
-                        mb: { md: 1, xs: 1 },
-                        fontFamily: 'DaxlinePro'
-                    }}
-                >
-                    Check out our events for the past month
-                </Typography>
-
                 {/* Descriptive Text */}
                 <Typography
                     variant="body1"
@@ -78,10 +64,8 @@ const Events = () => {
                         fontFamily: 'DaxlinePro'
                     }}
                 >
-                    Celebrate your big day in style with NailSavvy’s exclusive Bridal Services, designed to give the bride, her bridesmaids,
-                    and even the groomsmen a luxurious, relaxing, and unforgettable experience. From glamorous nails to indulgent pampering,
-                    we’ve crafted the ultimate bridal packages to ensure you look and feel your best—because you deserve nothing less on
-                    your special day.
+                    From gallery openings to community art festivals, we organize and host events that celebrate art and bring people
+                    together. Our events are designed to inspire, educate, and connect audiences with the transformative power of art.
                 </Typography>
 
                 {/* Full-width Image */}
