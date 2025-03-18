@@ -4,6 +4,10 @@ import { Typography, Box, Divider, Grid, List, ListItem, ListItemText, Button } 
 import Footer from 'ui-component/footer';
 import Form from 'ui-component/form';
 import bridalImage from 'assets/images/xxxxxxxx.jpg';
+import basket from 'assets/images/Picture1.jpg';
+import dept from 'assets/images/dept.jpg';
+import hospital from 'assets/images/hospital.jpg';
+import eko from 'assets/images/eko.png';
 import AppBar from 'ui-component/extended/AppBar';
 
 const Events = () => {
@@ -186,14 +190,14 @@ const Events = () => {
                     <Grid container spacing={4}>
                         {/* Column 1 */}
                         <Grid item xs={12} sm={4}>
-                            <Box component="img" src={bridalImage} alt="Image 1" sx={{ width: '100%', height: 'auto', mb: 2 }} />
-                            <Box component="img" src={bridalImage} alt="Image 2" sx={{ width: '100%', height: 'auto', mb: 2 }} />
-                            <Box component="img" src={bridalImage} alt="Image 3" sx={{ width: '100%', height: 'auto' }} />
+                            <Box component="img" src={basket} alt="Image 1" sx={{ width: '100%', height: 'auto', mb: 2 }} />
+                            <Box component="img" src={dept} alt="Image 2" sx={{ width: '100%', height: 'auto', mb: 2 }} />
+                            <Box component="img" src={hospital} alt="Image 3" sx={{ width: '100%', height: 'auto' }} />
                         </Grid>
 
                         {/* Column 2 */}
                         <Grid item xs={12} sm={4}>
-                            <Box component="img" src={bridalImage} alt="Image 4" sx={{ width: '100%', height: 'auto', mb: 2 }} />
+                            <Box component="img" src={eko} alt="Image 4" sx={{ width: '100%', height: 'auto', mb: 2 }} />
                             <Box component="img" src={bridalImage} alt="Image 5" sx={{ width: '100%', height: 'auto', mb: 2 }} />
                             <Box component="img" src={bridalImage} alt="Image 6" sx={{ width: '100%', height: 'auto' }} />
                         </Grid>
