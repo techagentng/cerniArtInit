@@ -158,20 +158,21 @@ const Landing = () => {
                 }}
             >
                 {/* Left Image (Logo) */}
-                <Box
-                    component="img"
-                    src={logo}
-                    alt="Left Image"
-                    sx={{
-                        position: 'absolute',
-                        left: { xs: '10px', sm: '20px', md: '30px' },
-                        top: { xs: '10%', sm: '15%', md: '20%' },
-                        transform: 'translateY(-50%)',
-                        width: { xs: '100px', sm: '200px', md: '250px' },
-                        height: 'auto',
-                        zIndex: 1
-                    }}
-                />
+ <Box
+    component="img"
+    src={logo}
+    alt="Left Image"
+    sx={{
+        position: 'absolute',
+        left: { xs: '10px', sm: '20px', md: '30px' },
+        top: { xs: '20%', sm: '15%', md: '20%' }, // Increased top for mobile
+        transform: 'translateY(-40%)', // Adjusted for better centering
+        width: { xs: '120px', sm: '200px', md: '250px' }, // Slightly larger for xs
+        height: 'auto',
+        zIndex: 1
+    }}
+/>
+
 
                 {/* Nigerian Map Component - Properly Centered */}
                 <Box
