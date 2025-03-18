@@ -181,7 +181,7 @@ const Landing = () => {
                         maxWidth: '700px',
                         position: 'relative',
                         zIndex: 1,
-                        marginTop: { xs: '200px'}
+                        marginTop: { xs: '130px' }
                     }}
                 >
                     <NigerianMap />
@@ -198,7 +198,7 @@ const Landing = () => {
                         height: { xs: '200px', sm: '250px', md: '300px' },
                         // backgroundColor: 'yellow',
                         zIndex: 0,
-                        justifyContent: 'center',
+                        justifyContent: 'space-between',
                         alignItems: 'center', // Vertically center the content
                         paddingX: { xs: 2, md: 4 } // Add padding for spacing from edges
                     }}
@@ -255,7 +255,7 @@ const Landing = () => {
                                 textAlign: 'center',
                                 display: 'inline-block', // Ensures seamless looping
                                 marginRight: '150px',
-                                marginTop: {xs:'90px'}
+                                marginTop: { xs: '90px' }
                             }}
                         >
                             ART FOR IMPACT
