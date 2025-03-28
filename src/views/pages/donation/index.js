@@ -100,7 +100,7 @@ const MonthlyDonation = () => {
                     left: { xs: '10px', sm: '20px', md: '30px' },
                     top: { xs: '20%', sm: '15%', md: '11%' },
                     transform: 'translateY(-40%)', // Adjusted for better centering
-                    width: { xs: '120px', sm: '200px', md: '250px' }, // Slightly larger for xs
+                    width: { xs: '90px', sm: '200px', md: '200px' }, // Slightly larger for xs
                     height: 'auto',
                     zIndex: 1
                 }}
@@ -222,7 +222,7 @@ const MonthlyDonation = () => {
                                     </Button>
                                 </Stack>
                             </Grid>
-                            <Grid container spacing={4}>
+                            <Grid container spacing={4} sx={{ mt: 4 }}>
                                 {packages.map((pkg, index) => (
                                     <Grid item xs={12} sm={6} md={4} key={index}>
                                         <Box
