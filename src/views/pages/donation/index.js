@@ -58,18 +58,22 @@ const MonthlyDonation = () => {
     const [isCustom, setIsCustom] = useState(false);
     const packages = [
         {
-            title: '1. Bridal Luxe Package',
-            description: 'For the bride who deserves the finest, this package offers:',
-            bulletPoints: ['Glamorous nail enhancements', 'Relaxing hand and foot massages', 'Custom designs tailored to your theme']
+            title: '1. Diamond sponsors',
+            description: '$200, 000 and above',
+            bulletPoints: [
+                'Brand placement on all 37 Wall murals',
+                'Speaker at All the Empowerment Programme & Event Venue Branding',
+                'Custom designs tailored to your theme'
+            ]
         },
         {
-            title: '2. Bridesmaids’ Elegance',
-            description: 'Perfect for your bridal party to feel pampered and beautiful:',
+            title: '2. Platinum sponsors',
+            description: '$100, 000 - $199, 999',
             bulletPoints: ['Coordinated nail art', 'Rejuvenating treatments', 'Personalized attention']
         },
         {
-            title: '3. Groomsmen’s Grooming',
-            description: 'Because the men in your party deserve care too:',
+            title: '3. Gold sponsors',
+            description: '$50, 000 - $99, 999',
             bulletPoints: ['Clean and classic nail grooming', 'Relaxation therapy', 'Subtle, masculine finishes']
         }
     ];
