@@ -12,6 +12,10 @@ import {
     InputLabel,
     FormControl,
     Box,
+    Divider,
+    List,
+    ListItemText,
+    ListItem,
     Link
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -52,7 +56,23 @@ const MonthlyDonation = () => {
     const [amount, setAmount] = useState(25); // Default donation amount
     const [customAmount, setCustomAmount] = useState('');
     const [isCustom, setIsCustom] = useState(false);
-
+    const packages = [
+        {
+            title: '1. Bridal Luxe Package',
+            description: 'For the bride who deserves the finest, this package offers:',
+            bulletPoints: ['Glamorous nail enhancements', 'Relaxing hand and foot massages', 'Custom designs tailored to your theme']
+        },
+        {
+            title: '2. Bridesmaids’ Elegance',
+            description: 'Perfect for your bridal party to feel pampered and beautiful:',
+            bulletPoints: ['Coordinated nail art', 'Rejuvenating treatments', 'Personalized attention']
+        },
+        {
+            title: '3. Groomsmen’s Grooming',
+            description: 'Because the men in your party deserve care too:',
+            bulletPoints: ['Clean and classic nail grooming', 'Relaxation therapy', 'Subtle, masculine finishes']
+        }
+    ];
     const handleFormClick = () => {
         dispatch(setFormOpen(true)); // Opens a modal (assumes Redux setup)
     };
@@ -78,7 +98,7 @@ const MonthlyDonation = () => {
                 sx={{
                     position: 'absolute',
                     left: { xs: '10px', sm: '20px', md: '30px' },
-                    top: { xs: '20%', sm: '15%', md: '11%' }, 
+                    top: { xs: '20%', sm: '15%', md: '11%' },
                     transform: 'translateY(-40%)', // Adjusted for better centering
                     width: { xs: '120px', sm: '200px', md: '250px' }, // Slightly larger for xs
                     height: 'auto',
@@ -202,7 +222,70 @@ const MonthlyDonation = () => {
                                     </Button>
                                 </Stack>
                             </Grid>
+                            <Grid container spacing={4}>
+                                {packages.map((pkg, index) => (
+                                    <Grid item xs={12} sm={6} md={4} key={index}>
+                                        <Box
+                                            sx={{
+                                                border: '1px solid #000',
+                                                padding: 3,
+                                                borderRadius: '4px',
+                                                backgroundColor: '#fff'
+                                            }}
+                                        >
+                                            {/* Numbered Heading */}
+                                            <Typography
+                                                variant="h3"
+                                                sx={{
+                                                    fontWeight: 'bold',
+                                                    mb: 2,
+                                                    fontFamily: 'DaxlinePro'
+                                                }}
+                                            >
+                                                {pkg.title}
+                                            </Typography>
 
+                                            {/* Description */}
+                                            <Typography
+                                                variant="body1"
+                                                sx={{
+                                                    mb: 2,
+                                                    fontFamily: 'DaxlinePro',
+                                                    fontSize: '1rem'
+                                                }}
+                                            >
+                                                {pkg.description}
+                                            </Typography>
+
+                                            {/* Divider */}
+                                            <Divider sx={{ mb: 2 }} />
+
+                                            {/* Bulleted List */}
+                                            <List
+                                                sx={{
+                                                    backgroundColor: '#f7f2ec',
+                                                    padding: 2,
+                                                    borderRadius: '4px'
+                                                }}
+                                            >
+                                                {pkg.bulletPoints.map((point, idx) => (
+                                                    <ListItem key={idx} disableGutters>
+                                                        <ListItemText primary={point} />
+                                                    </ListItem>
+                                                ))}
+                                            </List>
+
+                                            {/* Divider after list */}
+                                            <Divider sx={{ mb: 2 }} />
+
+                                            {/* Descriptive Text Below Divider */}
+                                            <Typography variant="body1" sx={{ mb: 2, fontFamily: 'DaxlinePro' }}>
+                                                Perfect for the bride looking for a flawless, glamorous finish that lasts all day.
+                                            </Typography>
+                                        </Box>
+                                    </Grid>
+                                ))}
+                            </Grid>
                             {/* Footer Information */}
                             <Grid item xs={12}>
                                 <Typography
