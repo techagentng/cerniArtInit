@@ -41,7 +41,7 @@ const Jumbo = styled(Paper)({
 // Button styling with orange accent from the document
 const ButtonSX = {
     borderRadius: 4,
-    backgroundColor: '#FF6200y', // Orange from "CIAIR 36"
+    backgroundColor: '#FF6200', // Fixed typo from '#FF6200y' to '#FF6200'
     color: 'white',
     padding: '12px 30px',
     width: '100%',
@@ -77,6 +77,14 @@ const MonthlyDonation = () => {
             bulletPoints: ['Clean and classic nail grooming', 'Relaxation therapy', 'Subtle, masculine finishes']
         }
     ];
+
+    const generalBenefits = [
+        "Contribution to reducing Air pollution with the use of Technology.",
+        "Social Impact - Empowering 10,000 Female Entrepreneurs & Female Creatives in Nigeria.",
+        "Build or improve positive brand reputation.",
+        "Gain brand recognition and attention from over 200,000 people who may not have otherwise heard of your brand."
+    ];
+
     const handleFormClick = () => {
         dispatch(setFormOpen(true)); // Opens a modal (assumes Redux setup)
     };
@@ -177,7 +185,7 @@ const MonthlyDonation = () => {
                                 </Stack>
                             </Grid>
 
-                            {/* Right Section: Donation Form */}
+       {/* Right Section: Donation Form */}
                             <Grid item xs={12} md={6}>
                                 <Stack spacing={3} sx={{ width: '100%', maxWidth: '500px', mx: 'auto' }}>
                                     {/* Amount Selection */}
@@ -290,6 +298,48 @@ const MonthlyDonation = () => {
                                     </Grid>
                                 ))}
                             </Grid>
+
+                            {/* General Benefits to Our Sponsors Section */}
+                            <Grid item xs={12} sx={{ mt: 6 }}>
+                                <Box
+                                    sx={{
+                                        backgroundColor: '#f7f2ec',
+                                        padding: 4,
+                                        borderRadius: '8px',
+                                        border: '1px solid #FF6200'
+                                    }}
+                                >
+                                    <Typography
+                                        variant="h5"
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#FF6200',
+                                            textAlign: 'center',
+                                            mb: 3
+                                        }}
+                                    >
+                                        General Benefits to Our Sponsors
+                                    </Typography>
+                                    <Grid container spacing={2}>
+                                        {generalBenefits.map((benefit, index) => (
+                                            <Grid item xs={12} sm={6} key={index}>
+                                                <Typography
+                                                    variant="body1"
+                                                    sx={{
+                                                        fontSize: '1.1rem',
+                                                        color: '#333',
+                                                        textAlign: { xs: 'center', sm: 'left' },
+                                                        fontWeight: 'medium'
+                                                    }}
+                                                >
+                                                    {benefit}
+                                                </Typography>
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                </Box>
+                            </Grid>
+
                             {/* Footer Information */}
                             <Grid item xs={12}>
                                 <Typography
