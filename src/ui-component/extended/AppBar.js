@@ -100,23 +100,23 @@ const AppBar = ({ ...others }) => {
                                 minWidth: 0 // Prevents unintended wrapping
                             }}
                         >
-                            <Button color="inherit" component={Link} href="/" target="_blank">
+                            <Button color="inherit" component={Link} href="/">
                                 Home
                             </Button>
-                            <Button color="inherit" component={Link} href="/about" target="_blank">
+                            <Button color="inherit" component={Link} href="/about">
                                 About
                             </Button>
-                            <Button color="inherit" component={RouterLink} to="/initiative" target="_blank">
-                                Innitiative
+                            <Button color="inherit" component={RouterLink} to="/initiative">
+                                Activities
                             </Button>
                             {/* <Button color="inherit" component={RouterLink} to="/products" target="_blank">
                                 Merchandise
                             </Button> */}
 
-                            <Button color="inherit" component={RouterLink} to="/events" target="_blank">
+                            <Button color="inherit" component={RouterLink} to="/events">
                                 Events
                             </Button>
-                            <Button color="inherit" component={RouterLink} to="/donation" target="_blank">
+                            <Button color="inherit" component={RouterLink} to="/donation">
                                 Donate
                             </Button>
                             {/* Decorative Line */}
@@ -195,7 +195,7 @@ const AppBar = ({ ...others }) => {
                                         onKeyDown={drawerToggler(false)}
                                     >
                                         <List>
-                                            <Link style={{ textDecoration: 'none' }} href="/" target="_blank">
+                                            <Link style={{ textDecoration: 'none' }} href="/">
                                                 <ListItemButton component="a">
                                                     <ListItemIcon>
                                                         <IconHome2 />
@@ -203,15 +203,7 @@ const AppBar = ({ ...others }) => {
                                                     <ListItemText primary="Home" />
                                                 </ListItemButton>
                                             </Link>
-                                            <Link style={{ textDecoration: 'none' }} href="/services" target="_blank">
-                                                <ListItemButton component="a">
-                                                    <ListItemIcon>
-                                                        <IconDashboard />
-                                                    </ListItemIcon>
-                                                    <ListItemText primary="Projects" />
-                                                </ListItemButton>
-                                            </Link>
-                                            <Link style={{ textDecoration: 'none' }} href="/about" target="_blank">
+                                            <Link style={{ textDecoration: 'none' }} href="/about">
                                                 <ListItemButton component="a">
                                                     <ListItemIcon>
                                                         <IconBook />
@@ -219,7 +211,31 @@ const AppBar = ({ ...others }) => {
                                                     <ListItemText primary="About" />
                                                 </ListItemButton>
                                             </Link>
-                                            <Link style={{ textDecoration: 'none' }} onClick={handleFormClick} target="_blank">
+                                            <RouterLink style={{ textDecoration: 'none' }} to="/initiative">
+                                                <ListItemButton component="a">
+                                                    <ListItemIcon>
+                                                        <IconDashboard />
+                                                    </ListItemIcon>
+                                                    <ListItemText primary="Initiative" />
+                                                </ListItemButton>
+                                            </RouterLink>
+                                            <RouterLink style={{ textDecoration: 'none' }} to="/events">
+                                                <ListItemButton component="a">
+                                                    <ListItemIcon>
+                                                        <IconBook />
+                                                    </ListItemIcon>
+                                                    <ListItemText primary="Events" />
+                                                </ListItemButton>
+                                            </RouterLink>
+                                            <RouterLink style={{ textDecoration: 'none' }} to="/donation">
+                                                <ListItemButton component="a">
+                                                    <ListItemIcon>
+                                                        <IconCreditCard />
+                                                    </ListItemIcon>
+                                                    <ListItemText primary="Donate" />
+                                                </ListItemButton>
+                                            </RouterLink>
+                                            <Link style={{ textDecoration: 'none' }} onClick={handleFormClick}>
                                                 <ListItemButton component="a">
                                                     <ListItemIcon>
                                                         <IconCreditCard />

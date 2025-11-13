@@ -59,15 +59,6 @@ const NigerianMap = () => {
                 height={1200}
                 style={{ overflow: 'visible' }}
             >
-                <defs>
-                    <pattern id="bornoPattern" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="https://picsum.photos/100/100?random=1" width="100" height="100" />
-                    </pattern>
-                    <pattern id="nigerPattern" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="https://picsum.photos/100/100?random=2" width="100" height="100" />
-                    </pattern>
-                </defs>
-
                 <Geographies geography={geoData}>
                     {({ geographies }) => {
                         // Ensure hovered state is last in the array
@@ -79,8 +70,6 @@ const NigerianMap = () => {
                         return sortedGeographies.map((geo) => {
                             const stateName = geo.properties.admin1Name?.trim() || 'Unknown';
                             const count = getCountForState(stateName);
-                            const isBorno = stateName === 'Borno';
-                            const isNiger = stateName === 'Niger';
 
                             return (
                                 <motion.g
@@ -103,23 +92,17 @@ const NigerianMap = () => {
                                         geography={geo}
                                         style={{
                                             default: {
-                                                fill: isBorno
-                                                    ? 'url(#bornoPattern)'
-                                                    : isNiger
-                                                    ? 'url(#nigerPattern)'
-                                                    : count > 0
-                                                    ? '#0e4934'
-                                                    : '#fff',
+                                                fill: count > 0 ? '#0e4934' : '#fff',
                                                 stroke: '#fff',
                                                 strokeWidth: 3
                                             },
                                             hover: {
-                                                fill: isBorno ? 'url(#bornoPattern)' : isNiger ? 'url(#nigerPattern)' : '#0e4934',
+                                                fill: '#0e4934',
                                                 stroke: '#000',
                                                 strokeWidth: 1
                                             },
                                             pressed: {
-                                                fill: isBorno ? 'url(#bornoPattern)' : isNiger ? 'url(#nigerPattern)' : '#E42',
+                                                fill: '#E42',
                                                 stroke: '#000',
                                                 strokeWidth: 1
                                             }

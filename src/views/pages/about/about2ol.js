@@ -27,8 +27,8 @@ const initiatives = [
 
 const AboutSectionTwo = () => {
     return (
-        <Container sx={{ py: 6 }}>
-            <Typography variant="h1" sx={{ fontWeight: 'bold', fontFamily: 'DaxlinePro' }}>
+        <Container sx={{ py: 6, px: { xs: 2, md: 3 } }}>
+            <Typography variant="h1" sx={{ fontWeight: 'bold', fontFamily: 'DaxlinePro', fontSize: { xs: '2rem', md: '3rem' } }}>
                 Our Impact
             </Typography>
             <Grid container spacing={4} sx={{ justifyContent: 'space-between'}}>
@@ -59,12 +59,12 @@ const AboutSectionTwo = () => {
 
                 {/* Right Column: Text Content */}
                 <Grid item xs={12} md={8} sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                    <Box sx={{ py: 4, px: 3, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
-                        <Paper elevation={3} sx={{ maxWidth: 800, mx: 'auto', p: 4, borderRadius: 3 }}>
-                            <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
+                    <Box sx={{ py: { xs: 2, md: 4 }, px: { xs: 1, md: 3 }, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
+                        <Paper elevation={3} sx={{ maxWidth: 800, mx: 'auto', p: { xs: 2, md: 4 }, borderRadius: 3 }}>
+                            <Typography variant="h4" fontWeight="bold" align="center" gutterBottom sx={{ fontSize: { xs: '1.5rem', md: '2rem' } }}>
                                 Cera Cerni Art Initiative
                             </Typography>
-                            <Typography variant="h6" align="center" color="text.secondary" gutterBottom>
+                            <Typography variant="h6" align="center" color="text.secondary" gutterBottom sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>
                                 Through our diverse range of activities, we are making a significant contribution to Nigerias creative
                                 economy.
                             </Typography>
@@ -87,10 +87,10 @@ const AboutSectionTwo = () => {
                                                 {index + 1}
                                             </Avatar>
                                             <Box sx={{ flex: 1, ml: 2 }}>
-                                                <Typography variant="h6" fontWeight="bold">
+                                                <Typography variant="h6" fontWeight="bold" sx={{ fontSize: { xs: '1rem', md: '1.25rem' } }}>
                                                     {item.title}
                                                 </Typography>
-                                                <Typography variant="body2" color="text.secondary">
+                                                <Typography variant="body2" color="text.secondary" sx={{ fontSize: { xs: '0.875rem', md: '1rem' } }}>
                                                     {item.description}
                                                 </Typography>
                                             </Box>

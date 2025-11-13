@@ -53,14 +53,14 @@ const HeaderSection = () => {
                                     textAlign={{ xs: 'center', md: 'left' }}
                                     color="text.primary"
                                     variant="body1"
-                                    sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: '50%' }}
+                                    sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: { xs: '100%', md: '50%' } }}
                                 >
                                     Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We
                                     believe in the transformative power of art and its ability to inspire, challenge, and connect
                                     individuals across cultures and communities. <br />
                                     Our mission is to deliver a unique nail experience through cutting-edge techniques, premium products,
                                     and a deep commitment to client satisfaction. With our team of expert nail technicians and a focus on
-                                    artistry and hygiene, we’re redefining what it means to have your nails done. We envision a world where
+                                    artistry and hygiene, we&apos;re redefining what it means to have your nails done. We envision a world where
                                     art is accessible to all, where creativity is celebrated, and where artistic expression is valued as an
                                     essential component of human experience.
                                 </Typography>
@@ -71,7 +71,7 @@ const HeaderSection = () => {
                 <Grid item xs={12}>
                     <HeaderImage src={Hero} />
                 </Grid>
-                <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'left' }, marginLeft: { xs: 0, md: '50%' } }}>
+                <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'left' }, marginLeft: { xs: 0, md: '50%' }, px: { xs: 2, md: 0 } }}>
                     <motion.div
                         initial={{ opacity: 0, translateY: 550 }}
                         animate={{ opacity: 1, translateY: 0 }}
@@ -83,32 +83,32 @@ const HeaderSection = () => {
                         animate={{ opacity: 1, translateY: 0 }}
                         transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
                     >
-                        <Typography variant="h1" fontWeight="bold" gutterBottom>
+                        <Typography variant="h1" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }}>
                             Our Mission
                         </Typography>
 
-                        <Typography variant="h4" fontWeight="bold" gutterBottom>
+                        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '2rem' } }}>
                             Project Overview
                         </Typography>
 
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
                             The project intends to utilize the installation of <strong>One Wall Mural</strong> using{' '}
                             <strong>AIR-INK©</strong> at an iconic/strategic location within each of the 36 states of the Nigerian
                             Federation. This aims to highlight the problem of poor air quality and drive both local and national
                             conversations to influence policy actions on improving air quality in Nigeria.
                         </Typography>
 
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
                             <strong>AIR-INK©</strong> is a proprietary brand of ink and composite products made by condensing carbon-based
                             gaseous effluents generated from air pollution due to incomplete combustion of fossil fuels. This innovative
                             technology seeks to reverse the negative effects of poor air quality.
                         </Typography>
 
-                        <Typography variant="h4" fontWeight="bold" gutterBottom>
+                        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '2rem' } }}>
                             Women Empowerment Programme
                         </Typography>
 
-                        <Typography variant="body1">
+                        <Typography variant="body1" sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
                             The project also aims to organize an empowerment programme for female entrepreneurs and women in business within
                             the <strong>Creative Economy</strong> of each state in the Federation. This initiative will harness the power of
                             creativity to support solutions for environmental challenges.
@@ -145,7 +145,7 @@ const HeaderSection = () => {
                                     textAlign={{ xs: 'center', md: 'left' }}
                                     color="text.primary"
                                     variant="body1"
-                                    sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: '50%' }}
+                                    sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: { xs: '100%', md: '50%' } }}
                                 >
                                     The project intends to utilize the installation of One Wall Mural using AIR-INK© at an iconic/strategic
                                     location within each of the 36 states of the Nigerian Federation, to accentuate the problem of poor air

@@ -261,7 +261,7 @@ const Landing = () => {
             {/* New Objective Section */}
             <ObjectiveSection>
                 <Typography variant="h1" sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center', mb: 4 }}>
-                    Our Objective
+                    Our Vission & Mission
                 </Typography>
                 <Grid container spacing={3} justifyContent="center">
                     <Grid item xs={12} sm={6} md={4}>
@@ -435,6 +435,7 @@ const Landing = () => {
                                 onBlur={formik.handleBlur}
                                 error={formik.touched.location && Boolean(formik.errors.location)}
                                 helperText={formik.touched.location && formik.errors.location}
+                                sx={{ mt: 2 }}
                             />
 
                             <TextField
@@ -447,6 +448,7 @@ const Landing = () => {
                                 onBlur={formik.handleBlur}
                                 error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
                                 helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
+                                sx={{ mt: 2 }}
                             />
 
                             <TextField
@@ -459,6 +461,7 @@ const Landing = () => {
                                 onBlur={formik.handleBlur}
                                 error={formik.touched.extraField && Boolean(formik.errors.extraField)}
                                 helperText={formik.touched.extraField && formik.errors.extraField}
+                                sx={{ mt: 2 }}
                             />
 
                             <Button type="submit" variant="contained" fullWidth sx={{ py: 1.5, color: 'white', mt: 2 }} disabled={loading}>

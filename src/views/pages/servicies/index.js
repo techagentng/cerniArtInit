@@ -21,7 +21,7 @@ const Landing = () => {
             {/* AppBar for Navigation */}
             <AppBar />
             <Typography variant="h1" sx={{ padding: 4, mt: 7, ml: 8, fontWeight: 'bold', fontSize: '1.5rem' }}>
-                Cera Cerni Art Programs
+                Our Activities
             </Typography>
             <Box
                 sx={{
@@ -30,22 +30,6 @@ const Landing = () => {
                     backgroundColor: '#f8f8f8'
                 }}
             >
-                {/* Heading and Description */}
-                <Box sx={{ mb: 4 }}>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            textAlign: 'left',
-                            fontSize: { xs: '1rem', md: '1.2rem' },
-                            maxWidth: { xs: '100%', sm: '100%', md: '100%' }
-                        }}
-                    >
-                        At Art for Impact, we specialize in creating stunning, large-scale murals and offering a range of art services that
-                        transform spaces, inspire communities, and foster creativity. From vibrant street art to immersive exhibitions, our
-                        expert artists bring your vision to life with creativity and precision. Whether it’s for homes, businesses, or
-                        public spaces, we deliver art that makes an impact.
-                    </Typography>
-                </Box>
 
                 {/* Two-Column Layout of Images with Text under each */}
                 <Grid container spacing={4}>
