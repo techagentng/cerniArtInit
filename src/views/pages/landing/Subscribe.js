@@ -20,8 +20,10 @@ const ButtonSX = {
     borderRadius: 2,
     backgroundColor: '#ff6b77',
     color: 'white',
-    padding: '12px 130px', // Increased padding for longer buttons
-    width: '100%', // Increased from 80% to 90% for longer width
+    padding: { xs: '16px 60px', sm: '12px 80px', md: '12px 130px' },
+    fontSize: { xs: '1.1rem', sm: '1rem', md: '1rem' },
+    fontWeight: { xs: 'bold', sm: 'normal', md: 'normal' },
+    width: '100%',
     marginTop: '20px'
 };
 
@@ -35,23 +37,13 @@ const Subscribe = () => {
     return (
         <Container sx={{ paddingY: 15 }}>
             <FadeInWhenVisible animationType="fadeIn" delay={0.3}>
-                <Jumbo sx={{ paddingX: { xs: 5, md: 15 }, paddingY: 15 }} elevation={2}>
-                    <Grid container spacing={5} sx={{ alignItems: 'center' }} direction={{ xs: 'column', md: 'row' }}>
-                        <Grid item xs={12} md={12} sx={{ marginTop: { xs: '20px', md: '1px' } }}>
-                            <Stack spacing={2} alignItems="center">
-                                <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="center" sx={{ width: '100%' }}>
-                                    <Stack spacing={1} alignItems="center">
-                                        <Link>
-                                        <Button variant="contained" color="success" sx={ButtonSX} onClick={handleFormClick}>
-                                            Get Involved
-                                        </Button>
-                                        </Link>
-                                    </Stack>
-                                </Stack>
-                            </Stack>
-                        </Grid>
-                    </Grid>
-                </Jumbo>
+                <Stack spacing={2} alignItems="center" sx={{ width: '100%' }}>
+                    <Link>
+                        <Button variant="contained" color="success" sx={ButtonSX} onClick={handleFormClick}>
+                            Get Involved
+                        </Button>
+                    </Link>
+                </Stack>
             </FadeInWhenVisible>
         </Container>
     );
