@@ -24,6 +24,7 @@ import { setFormOpen } from 'store/slices/cartslice'; // Adjust path as needed
 import FadeInWhenVisible from './Animation2'; // Adjust path as needed
 import AppBar from 'ui-component/extended/AppBar';
 import logo from 'assets/images/WhatsApp Image 2025-01-22 at 5.28.png';
+import GetInvolvedModal from 'ui-component/GetInvolvedModal';
 
 // Styled Paper for the main container
 const Jumbo = styled(Paper)({
@@ -365,6 +366,7 @@ const MonthlyDonation = () => {
                     </Jumbo>
                 </FadeInWhenVisible>
             </Container>
+            <GetInvolvedModal />
         </>
     );
 };

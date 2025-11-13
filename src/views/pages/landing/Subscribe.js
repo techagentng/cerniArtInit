@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Paper, Stack, Typography } from '@mui/material';
+import { Button, Container, Grid, Paper, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -39,30 +39,6 @@ const Subscribe = () => {
                     <Grid container spacing={5} sx={{ alignItems: 'center' }} direction={{ xs: 'column', md: 'row' }}>
                         <Grid item xs={12} md={12} sx={{ marginTop: { xs: '20px', md: '1px' } }}>
                             <Stack spacing={2} alignItems="center">
-                                <Typography
-                                    variant="h2"
-                                    sx={{
-                                        fontSize: { xs: '1.5rem', sm: '2.125rem' },
-                                        mb: 2,
-                                        textAlign: 'center', // Centralized text for all sizes
-                                        color: 'white',
-                                        width: '100%'
-                                    }}
-                                >
-                                    Contribution to reducing Air pollution with the use of Technology.
-                                </Typography>
-                                <Typography
-                                    variant="subtitle2"
-                                    color="white"
-                                    sx={{
-                                        fontSize: '1rem',
-                                        zIndex: '99',
-                                        width: '100%',
-                                        textAlign: 'center' // Centralized text for all sizes
-                                    }}
-                                >
-                                    Join the tour, showcase your work, and collaborate with fellow artists.
-                                </Typography>
                                 <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent="center" sx={{ width: '100%' }}>
                                     <Stack spacing={1} alignItems="center">
                                         <Link>
@@ -70,13 +46,6 @@ const Subscribe = () => {
                                             Get Involved
                                         </Button>
                                         </Link>
-                                    </Stack>
-                                    <Stack spacing={1} alignItems="center">
-                                        <Link to="/donation">
-                                            <Button variant="contained" color="success" sx={ButtonSX}>
-                                                Donation
-                                            </Button>
-                                     </Link>
                                     </Stack>
                                 </Stack>
                             </Stack>

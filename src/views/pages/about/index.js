@@ -5,6 +5,7 @@ import AboutSectionTwo from './about2ol';
 import Form from 'ui-component/form';
 import Footer from 'ui-component/footer';
 import HeaderSection from './HeaderSection';
+import GetInvolvedModal from 'ui-component/GetInvolvedModal';
 const About = () => {
     useEffect(() => {
         document.body.style.overflowX = 'hidden';
@@ -39,6 +40,7 @@ const About = () => {
 
             <AboutSectionTwo />
             <Form />
+            <GetInvolvedModal />
             <Footer />
         </>
     );

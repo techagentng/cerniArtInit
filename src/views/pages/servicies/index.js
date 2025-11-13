@@ -6,6 +6,7 @@ import AppBar from 'ui-component/extended/AppBar';
 // import ait from './ait.png';
 import Footer from 'ui-component/footer';
 import Form from 'ui-component/form';
+import GetInvolvedModal from 'ui-component/GetInvolvedModal';
 // import { Link } from 'react-router-dom';
 
 const Landing = () => {
@@ -299,6 +300,7 @@ const Landing = () => {
 
             {/* Footer and Form Sections */}
             <Form />
+            <GetInvolvedModal />
             <Footer />
         </>
     );
