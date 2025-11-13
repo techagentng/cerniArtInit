@@ -36,6 +36,7 @@ const Events = () => {
                         textAlign: 'left',
                         fontWeight: 'bold',
                         mb: 3,
+                        mt: { xs: 4, md: 0 },
                         fontFamily: 'DaxlinePro',
                         fontSize: '1.5rem'
                     }}
@@ -73,15 +74,16 @@ const Events = () => {
 
             <Box sx={{ px: { xs: 3, sm: 6, md: 12 }, py: { md: 8, xs: 1 } }}>
                 {/* New Section with Heading and Images */}
-                <Box sx={{ py: 8 }}>
+                <Box sx={{ py: { xs: 2, md: 8 } }}>
                     {/* Heading */}
                     <Typography
-                        variant="h3"
+                        variant="h1"
                         sx={{
-                            textAlign: 'center',
+                            textAlign: 'left',
                             fontWeight: 'bold',
                             mb: 4,
-                            fontFamily: 'DaxlinePro'
+                            fontFamily: 'DaxlinePro',
+                            fontSize: '1.5rem'
                         }}
                     >
                         Event show room
