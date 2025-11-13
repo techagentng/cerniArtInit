@@ -73,18 +73,6 @@ const About = () => {
                             fontFamily: 'DaxlinePro' // Consistent font family
                         }}
                     >
-                        At NailSavvy, our mission is to deliver a unique nail experience through cutting-edge techniques, premium products,
-                        and a deep commitment to client satisfaction. With our team of expert nail technicians and a focus on artistry and
-                        hygiene, we’re redefining what it means to have your nails done.
-                    </Typography>
-
-                    <Typography
-                        paragraph
-                        sx={{
-                            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.2rem' }, // Responsive font size
-                            fontFamily: 'DaxlinePro' // Consistent font family
-                        }}
-                    >
                         From natural enhancements to bespoke nail art and luxurious pedicure treatments, we offer a full suite of services
                         designed to meet your every need and help you feel your best. We believe that self-care is not just about looking
                         good but also about feeling empowered, and our carefully curated services ensure that each client leaves feeling

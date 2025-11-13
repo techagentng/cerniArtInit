@@ -55,14 +55,7 @@ const HeaderSection = () => {
                                     variant="body1"
                                     sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: { xs: '100%', md: '50%' } }}
                                 >
-                                    Cera Cernis Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We
-                                    believe in the transformative power of art and its ability to inspire, challenge, and connect
-                                    individuals across cultures and communities. <br />
-                                    Our mission is to deliver a unique nail experience through cutting-edge techniques, premium products,
-                                    and a deep commitment to client satisfaction. With our team of expert nail technicians and a focus on
-                                    artistry and hygiene, we&apos;re redefining what it means to have your nails done. We envision a world where
-                                    art is accessible to all, where creativity is celebrated, and where artistic expression is valued as an
-                                    essential component of human experience.
+                                  Cera Cerni&apos;s Art Initiative is a dynamic platform dedicated to nurturing and promoting creativity. We believe in the transformative power of art and its ability to inspire, challenge, and connect individuals across cultures and communities.<br />
                                 </Typography>
                             </motion.div>
                         </Grid>
