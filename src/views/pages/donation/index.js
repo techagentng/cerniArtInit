@@ -23,7 +23,7 @@ import { useDispatch } from 'react-redux';
 import { setFormOpen } from 'store/slices/cartslice'; // Adjust path as needed
 import FadeInWhenVisible from './Animation2'; // Adjust path as needed
 import AppBar from 'ui-component/extended/AppBar';
-import logo from 'assets/images/WhatsApp Image 2025-01-22 at 5.28.png';
+// import logo from 'assets/images/WhatsApp Image 2025-01-22 at 5.28.png';
 import GetInvolvedModal from 'ui-component/GetInvolvedModal';
 
 // Styled Paper for the main container
@@ -104,20 +104,7 @@ const MonthlyDonation = () => {
     return (
         <>
             <AppBar />
-            <Box
-                component="img"
-                src={logo}
-                alt="Left Image"
-                sx={{
-                    position: 'absolute',
-                    left: { xs: '10px', sm: '20px', md: '30px' },
-                    top: { xs: '20%', sm: '15%', md: '11%' },
-                    transform: 'translateY(-40%)', // Adjusted for better centering
-                    width: { xs: '90px', sm: '200px', md: '200px' }, // Slightly larger for xs
-                    height: 'auto',
-                    zIndex: 1
-                }}
-            />
+
             <Container sx={{ paddingY: 10 }}>
                 <FadeInWhenVisible animationType="fadeIn" delay={0.3}>
                     <Jumbo sx={{ padding: { xs: 4, md: 6 } }}>
