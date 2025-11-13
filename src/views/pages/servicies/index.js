@@ -31,7 +31,6 @@ const Landing = () => {
                     backgroundColor: '#f8f8f8'
                 }}
             >
-
                 {/* Two-Column Layout of Images with Text under each */}
                 <Grid container spacing={4}>
                     {/* Artist Residencies */}

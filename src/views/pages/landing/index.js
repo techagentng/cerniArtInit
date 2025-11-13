@@ -172,11 +172,11 @@ const Landing = () => {
                 {/* Nigerian Map Component - Properly Centered */}
                 <Box
                     sx={{
-                        width: { xs: '80%', sm: '90%', md: '70%' },
+                        width: { xs: '95%', sm: '90%', md: '70%' },
                         maxWidth: '700px',
                         position: 'relative',
                         zIndex: 1,
-                        marginTop: { xs: '130px' }
+                        marginTop: { xs: '180px', sm: '130px', md: '130px' }
                     }}
                 >
                     <NigerianMap />
