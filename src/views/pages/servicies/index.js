@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Typography, Grid, Button } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import AppBar from 'ui-component/extended/AppBar';
 // import n1 from './n1.png';
 // import n2 from './n2.png';
@@ -235,66 +235,6 @@ const Landing = () => {
                         </Box>
                     </Grid>
                 </Grid>
-            </Box>
-
-            {/* Rest of the existing content */}
-            <Box
-                sx={{
-                    px: { xs: 3, sm: 6, md: 12 },
-                    mt: 5,
-                    textAlign: 'left',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'left',
-                    height: '30vh'
-                }}
-            >
-                {/* Heading */}
-                <Typography
-                    variant="h3"
-                    sx={{
-                        fontWeight: 'bold',
-                        fontSize: { xs: '1.6rem', md: '1.5rem' },
-                        mt: { xs: 3, md: 1 },
-                        mb: { xs: 2 },
-                        textAlign: 'left'
-                    }}
-                >
-                    Experience the Art of Transformation
-                </Typography>
-
-                {/* Description */}
-                <Typography
-                    variant="body1"
-                    sx={{
-                        fontSize: { xs: '1rem', md: '1.2rem' },
-                        maxWidth: { xs: '100%', sm: '100%' },
-                        textAlign: 'left'
-                    }}
-                >
-                    Let us bring your vision to life with our expert art services. From concept to completion, we ensure every detail is
-                    perfect, creating art that inspires and transforms spaces.
-                </Typography>
-
-                {/* CTA Button */}
-                <Box sx={{ mt: 4 }}>
-                    <Button
-                        variant="contained"
-                        sx={{
-                            backgroundColor: '#ff6c78',
-                            color: 'white',
-                            padding: '12px 20px',
-                            '&:hover': {
-                                backgroundColor: '#c51162'
-                            }
-                        }}
-                        component="a"
-                        href="/guest"
-                    >
-                        Book Your Consultation Now
-                    </Button>
-                </Box>
             </Box>
 
             {/* Footer and Form Sections */}

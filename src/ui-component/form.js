@@ -1,7 +1,6 @@
 import { Box, Button, Grid, Typography, TextField, InputAdornment, useTheme } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
-import PhoneIcon from '@mui/icons-material/Phone';
 const StayInTouchSection = () => {
     const theme = useTheme();
 
@@ -88,7 +87,7 @@ const StayInTouchSection = () => {
 
                 {/* Email and Phone Number Inputs with Icons */}
                 <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={6} md={12}>
                         <TextField
                             fullWidth
                             variant="outlined"
@@ -111,34 +110,6 @@ const StayInTouchSection = () => {
                                 startAdornment: (
                                     <InputAdornment position="start">
                                         <MailIcon />
-                                    </InputAdornment>
-                                )
-                            }}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                            fullWidth
-                            variant="outlined"
-                            label="Phone Number" // Add label here
-                            sx={{
-                                marginBottom: theme.spacing(2),
-                                '& .MuiOutlinedInput-root': {
-                                    height: '45px'
-                                },
-                                '& .MuiInputLabel-root': {
-                                    position: 'absolute',
-                                    top: '-1px', // Adjust to align above the input
-                                    left: '10px', // Adjust position
-                                    fontSize: '14px', // Label font size
-                                    backgroundColor: '#FFFFFF', // Optional: Match the input background
-                                    padding: '0 4px' // Optional: Add padding around the label
-                                }
-                            }}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <PhoneIcon />
                                     </InputAdornment>
                                 )
                             }}

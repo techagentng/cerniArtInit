@@ -261,14 +261,14 @@ const Landing = () => {
             {/* New Objective Section */}
             <ObjectiveSection>
                 <Typography variant="h1" sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center', mb: 4 }}>
-                    Our Vission & Mission
+                    Our Driving Force
                 </Typography>
                 <Grid container spacing={3} justifyContent="center">
                     <Grid item xs={12} sm={6} md={4}>
                         <ObjectiveItem>
                             <SchoolIcon sx={{ fontSize: 80, color: '#f44336' }} /> {/* Red */}
                             <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
-                                Educate the citizenry about mitigation measures against Air Pollution.
+                                Support Artistic Development and Practice
                             </Typography>
                         </ObjectiveItem>
                     </Grid>
@@ -276,7 +276,7 @@ const Landing = () => {
                         <ObjectiveItem>
                             <ForumIcon sx={{ fontSize: 80, color: '#4caf50' }} /> {/* Green */}
                             <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
-                                Drive conversations about actionable policies against Air pollution.
+                                Support Artistic Development and Practice
                             </Typography>
                         </ObjectiveItem>
                     </Grid>
@@ -284,8 +284,7 @@ const Landing = () => {
                         <ObjectiveItem>
                             <StarIcon sx={{ fontSize: 80, color: '#ffeb3b' }} /> {/* Yellow */}
                             <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
-                                Inspire a new generation of young creatives to embrace their skills and talents for personal growth,
-                                community impact and national development.
+                                Promote Artistic Expression and Connection
                             </Typography>
                         </ObjectiveItem>
                     </Grid>

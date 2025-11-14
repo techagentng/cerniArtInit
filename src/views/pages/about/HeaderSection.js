@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import { Container, Grid, Stack, Typography } from '@mui/material';
+import { Container, Grid, Stack, Typography, List, ListItem, ListItemText } from '@mui/material';
 
 // third party
 import { motion } from 'framer-motion';
@@ -77,34 +77,19 @@ const HeaderSection = () => {
                         transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
                     >
                         <Typography variant="h1" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }}>
+                            Our Vision
+                        </Typography>
+
+                        <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
+                            We envision a world where art is accessible to all, where creativity is celebrated, and where artistic expression is valued as an essential component of human experience.
+                        </Typography>
+
+                        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '2rem' } }}>
                             Our Mission
                         </Typography>
 
-                        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '2rem' } }}>
-                            Project Overview
-                        </Typography>
-
-                        <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
-                            The project intends to utilize the installation of <strong>One Wall Mural</strong> using{' '}
-                            <strong>AIR-INK©</strong> at an iconic/strategic location within each of the 36 states of the Nigerian
-                            Federation. This aims to highlight the problem of poor air quality and drive both local and national
-                            conversations to influence policy actions on improving air quality in Nigeria.
-                        </Typography>
-
-                        <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
-                            <strong>AIR-INK©</strong> is a proprietary brand of ink and composite products made by condensing carbon-based
-                            gaseous effluents generated from air pollution due to incomplete combustion of fossil fuels. This innovative
-                            technology seeks to reverse the negative effects of poor air quality.
-                        </Typography>
-
-                        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '2rem' } }}>
-                            Women Empowerment Programme
-                        </Typography>
-
                         <Typography variant="body1" sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}>
-                            The project also aims to organize an empowerment programme for female entrepreneurs and women in business within
-                            the <strong>Creative Economy</strong> of each state in the Federation. This initiative will harness the power of
-                            creativity to support solutions for environmental challenges.
+Our mission is to create a vibrant and inclusive art ecosystem that supports emerging and established artists, provides opportunities for artistic exploration and experimentation, and engages diverse audiences through impactful art experiences.
                         </Typography>
                     </motion.div>
                 </Grid>
@@ -125,7 +110,7 @@ const HeaderSection = () => {
                             >
                                 <Stack spacing={1}>
                                     <Typography textAlign={{ xs: 'center', md: 'left' }} variant="h1" sx={headerSX}>
-                                    Our Focus
+                                    Our Values
                                     </Typography>
                                 </Stack>
                             </motion.div>
@@ -134,20 +119,52 @@ const HeaderSection = () => {
                                 animate={{ opacity: 1, translateY: 0 }}
                                 transition={{ type: 'spring', stiffness: 150, damping: 30, delay: 0.2 }}
                             >
-                                <Typography
-                                    textAlign={{ xs: 'center', md: 'left' }}
-                                    color="text.primary"
-                                    variant="body1"
-                                    sx={{ fontSize: { xs: '0.8rem', md: '1rem' }, paddingY: '10px', width: { xs: '100%', md: '50%' } }}
+                                <List
+                                    sx={{
+                                        width: { xs: '100%', md: '50%' },
+                                        paddingY: '10px',
+                                        textAlign: { xs: 'center', md: 'left' },
+                                        listStyleType: 'disc',
+                                        pl: { xs: 2, md: 2 }
+                                    }}
                                 >
-                                    The project intends to utilize the installation of One Wall Mural using AIR-INK© at an iconic/strategic
-                                    location within each of the 36 states of the Nigerian Federation, to accentuate the problem of poor air
-                                    quality with the view to drive local & National conversations aimed at positively influencing policy
-                                    actions on improved air quality in Nigeria. AIR-INK is a proprietary brand of ink and composites
-                                    products made by condensing carbon-based gaseous effluents generated by air pollution due to incomplete
-                                    combustion of fossil fuels. This is a technology innovation that attempt to reverse the poor air
-                                    quality.
-                                </Typography>
+                                    <ListItem sx={{ display: 'list-item', paddingY: 0.5 }}>
+                                        <ListItemText
+                                            primary={
+                                                <Typography variant="body1" sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }}>
+                                                    <strong>Creativity:</strong> We champion artistic innovation and encourage risk-taking and experimentation.
+                                                </Typography>
+                                            }
+                                        />
+                                    </ListItem>
+                                    <ListItem sx={{ display: 'list-item', paddingY: 0.5 }}>
+                                        <ListItemText
+                                            primary={
+                                                <Typography variant="body1" sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }}>
+                                                    <strong>Inclusivity:</strong> We embrace diversity in all its forms and strive to create a welcoming and supportive environment for all artists and art enthusiasts.
+                                                </Typography>
+                                            }
+                                        />
+                                    </ListItem>
+                                    <ListItem sx={{ display: 'list-item', paddingY: 0.5 }}>
+                                        <ListItemText
+                                            primary={
+                                                <Typography variant="body1" sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }}>
+                                                    <strong>Collaboration:</strong> We believe in the power of collaboration and seek to build partnerships with artists, organizations, and communities to advance our shared goals.
+                                                </Typography>
+                                            }
+                                        />
+                                    </ListItem>
+                                    <ListItem sx={{ display: 'list-item', paddingY: 0.5 }}>
+                                        <ListItemText
+                                            primary={
+                                                <Typography variant="body1" sx={{ fontSize: { xs: '0.8rem', md: '1rem' } }}>
+                                                    <strong>Excellence:</strong> We are committed to artistic excellence and strive to present high-quality art experiences that inspire and engage audiences.
+                                                </Typography>
+                                            }
+                                        />
+                                    </ListItem>
+                                </List>
                             </motion.div>
                         </Grid>
                     </Grid>
