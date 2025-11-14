@@ -36,15 +36,6 @@ const Landing = () => {
                     {/* Artist Residencies */}
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'left' }}>
-                            <Box
-                                component="img"
-                                // src={artistResidencyImage}
-                                alt="Artist Residencies"
-                                sx={{
-                                    width: '100%',
-                                    boxShadow: 3
-                                }}
-                            />
                             <Typography
                                 variant="h5"
                                 sx={{
@@ -66,15 +57,6 @@ const Landing = () => {
                     {/* Exhibitions */}
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'left' }}>
-                            <Box
-                                component="img"
-                                // src={exhibitionImage}
-                                alt="Exhibitions"
-                                sx={{
-                                    width: '100%',
-                                    boxShadow: 3
-                                }}
-                            />
                             <Typography
                                 variant="h5"
                                 sx={{
@@ -107,15 +89,6 @@ const Landing = () => {
                     {/* Workshops */}
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'left' }}>
-                            <Box
-                                component="img"
-                                // src={workshopImage}
-                                alt="Workshops"
-                                sx={{
-                                    width: '100%',
-                                    boxShadow: 3
-                                }}
-                            />
                             <Typography
                                 variant="h5"
                                 sx={{
@@ -137,15 +110,6 @@ const Landing = () => {
                     {/* Masterclasses */}
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'left' }}>
-                            <Box
-                                component="img"
-                                // src={masterclassImage}
-                                alt="Masterclasses"
-                                sx={{
-                                    width: '100%',
-                                    boxShadow: 3
-                                }}
-                            />
                             <Typography
                                 variant="h5"
                                 sx={{
@@ -178,15 +142,6 @@ const Landing = () => {
                     {/* Public Art Projects */}
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'left' }}>
-                            <Box
-                                component="img"
-                                // src={publicArtImage}
-                                alt="Public Art Projects"
-                                sx={{
-                                    width: '100%',
-                                    boxShadow: 3
-                                }}
-                            />
                             <Typography
                                 variant="h5"
                                 sx={{
@@ -208,15 +163,6 @@ const Landing = () => {
                     {/* Art Events */}
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'left' }}>
-                            <Box
-                                component="img"
-                                // src={artEventImage}
-                                alt="Art Events"
-                                sx={{
-                                    width: '100%',
-                                    boxShadow: 3
-                                }}
-                            />
                             <Typography
                                 variant="h5"
                                 sx={{
