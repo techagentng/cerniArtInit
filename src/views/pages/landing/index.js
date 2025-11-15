@@ -276,8 +276,7 @@ const Landing = () => {
                         <ObjectiveItem>
                             <ForumIcon sx={{ fontSize: 80, color: '#4caf50' }} /> {/* Green */}
                             <Typography variant="body1" sx={{ mt: 2, maxWidth: '300px' }}>
-                                Support Artistic Development and Practice
-                            </Typography>
+Enrich Cultural Life and Community Engagement                            </Typography>
                         </ObjectiveItem>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>

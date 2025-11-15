@@ -105,9 +105,9 @@ const MonthlyDonation = () => {
         <>
             <AppBar />
 
-            <Container sx={{ paddingY: 10 }}>
+            <Container sx={{ paddingY: { xs: 5, md: 10 } }}>
                 <FadeInWhenVisible animationType="fadeIn" delay={0.3}>
-                    <Jumbo sx={{ padding: { xs: 4, md: 6 } }}>
+                    <Jumbo sx={{ padding: { xs: 2, sm: 3, md: 6 } }}>
                         <Grid container spacing={4} alignItems="center">
                             {/* Left Section: Campaign Info */}
                             <Grid item xs={12} md={6}>
@@ -139,7 +139,7 @@ const MonthlyDonation = () => {
                                         sx={{
                                             fontSize: '1rem',
                                             color: '#000',
-                                            textAlign: { xs: 'center', md: 'left' }
+                                            textAlign: 'left'
                                         }}
                                     >
                                         By Cera Cerni’s Art Initiative
@@ -148,7 +148,7 @@ const MonthlyDonation = () => {
                                         variant="body1"
                                         sx={{
                                             fontSize: { xs: '1rem', md: '1.25rem' },
-                                            textAlign: { xs: 'center', md: 'left' },
+                                            textAlign: 'left',
                                             color: '#333',
                                             mt: 2
                                         }}
@@ -158,17 +158,26 @@ const MonthlyDonation = () => {
                                         are matched for the first 12 months, tripling your impact for a year!
                                     </Typography>
                                     <Box sx={{ maxWidth: '400px', mt: 2 }}>
-                                        <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#FF6200', mb: 1 }}>
+                                        <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#FF6200', mb: 1, fontSize: { xs: '1rem', md: '1.25rem' } }}>
                                             Benefits of Monthly Giving
                                         </Typography>
-                                        <ul style={{ paddingLeft: '20px', color: '#333' }}>
+                                        <Box
+                                            component="ul"
+                                            sx={{
+                                                paddingLeft: '20px',
+                                                color: '#333',
+                                                fontSize: { xs: '1rem', md: '1.25rem' },
+                                                listStylePosition: 'outside',
+                                                '& li': {
+                                                    marginBottom: '8px',
+                                                    whiteSpace: { xs: 'normal', md: 'nowrap' }
+                                                }
+                                            }}
+                                        >
                                             <li>Fund sustainable clean air art projects year-round</li>
                                             <li>Receive updates on art events and exhibitions</li>
                                             <li>Get monthly tax statements for your records</li>
-                                            <li>Enjoy hassle-free automatic donations</li>
-                                            <li>Change or cancel your gift anytime</li>
-                                            <li>Join a creative community for clean air</li>
-                                        </ul>
+                                        </Box>
                                     </Box>
                                 </Stack>
                             </Grid>
@@ -208,17 +217,9 @@ const MonthlyDonation = () => {
                                     <TextField label="Last Name" fullWidth />
                                     <TextField label="Email Address" type="email" fullWidth />
 
-                                    {/* Payment Information */}
-                                    <TextField label="Credit Card Number" fullWidth />
-                                    <Stack direction="row" spacing={2}>
-                                        <TextField label="Expiration Date (MM/YY)" fullWidth />
-                                        <TextField label="CVV" fullWidth />
-                                    </Stack>
-                                    <TextField label="Billing Address" fullWidth />
-
                                     {/* Submit Button */}
                                     <Button variant="contained" sx={ButtonSX} onClick={handleFormClick}>
-                                        Start My Monthly Gift
+                                        Submit
                                     </Button>
                                 </Stack>
                             </Grid>
@@ -227,10 +228,10 @@ const MonthlyDonation = () => {
                                     <Grid item xs={12} sm={6} md={4} key={index}>
                                         <Box
                                             sx={{
-                                                border: '1px solid #000',
                                                 padding: 3,
                                                 borderRadius: '4px',
-                                                backgroundColor: '#fff'
+                                                backgroundColor: '#fff',
+                                                textAlign: { xs: 'center', md: 'left' }
                                             }}
                                         >
                                             {/* Numbered Heading */}
@@ -239,7 +240,9 @@ const MonthlyDonation = () => {
                                                 sx={{
                                                     fontWeight: 'bold',
                                                     mb: 2,
-                                                    fontFamily: 'DaxlinePro'
+                                                    fontFamily: 'DaxlinePro',
+                                                    fontSize: { xs: '1.5rem', sm: '1.75rem', md: '1.8rem' },
+                                                    textAlign: { xs: 'center', md: 'left' }
                                                 }}
                                             >
                                                 {pkg.title}
@@ -251,7 +254,8 @@ const MonthlyDonation = () => {
                                                 sx={{
                                                     mb: 2,
                                                     fontFamily: 'DaxlinePro',
-                                                    fontSize: '1rem'
+                                                    fontSize: { xs: '0.9rem', md: '1rem' },
+                                                    textAlign: { xs: 'center', md: 'left' }
                                                 }}
                                             >
                                                 {pkg.description}
@@ -264,13 +268,18 @@ const MonthlyDonation = () => {
                                             <List
                                                 sx={{
                                                     backgroundColor: '#f7f2ec',
-                                                    padding: 2,
+                                                    padding: { xs: 1, md: 2 },
                                                     borderRadius: '4px'
                                                 }}
                                             >
                                                 {pkg.bulletPoints.map((point, idx) => (
                                                     <ListItem key={idx} disableGutters>
-                                                        <ListItemText primary={point} />
+                                                        <ListItemText 
+                                                            primary={point}
+                                                            primaryTypographyProps={{
+                                                                sx: { fontSize: { xs: '0.85rem', md: '1rem' } }
+                                                            }}
+                                                        />
                                                     </ListItem>
                                                 ))}
                                             </List>
@@ -279,7 +288,7 @@ const MonthlyDonation = () => {
                                             <Divider sx={{ mb: 2 }} />
 
                                             {/* Descriptive Text Below Divider */}
-                                            <Typography variant="body1" sx={{ mb: 2, fontFamily: 'DaxlinePro' }}>
+                                            <Typography variant="body1" sx={{ mb: 2, fontFamily: 'DaxlinePro', fontSize: { xs: '0.9rem', md: '1rem' }, textAlign: { xs: 'center', md: 'left' } }}>
                                                 Perfect for the bride looking for a flawless, glamorous finish that lasts all day.
                                             </Typography>
                                         </Box>
@@ -288,11 +297,11 @@ const MonthlyDonation = () => {
                             </Grid>
 
                             {/* General Benefits to Our Sponsors Section */}
-                            <Grid item xs={12} sx={{ mt: 6 }}>
+                            <Grid item xs={12} sx={{ mt: { xs: 3, md: 6 } }}>
                                 <Box
                                     sx={{
                                         backgroundColor: '#f7f2ec',
-                                        padding: 4,
+                                        padding: { xs: 2, sm: 3, md: 4 },
                                         borderRadius: '8px',
                                         border: '1px solid #FF6200'
                                     }}
@@ -303,7 +312,8 @@ const MonthlyDonation = () => {
                                             fontWeight: 'bold',
                                             color: '#FF6200',
                                             textAlign: 'center',
-                                            mb: 3
+                                            mb: 3,
+                                            fontSize: { xs: '1.2rem', md: '1.5rem' }
                                         }}
                                     >
                                         General Benefits to Our Sponsors
@@ -314,7 +324,7 @@ const MonthlyDonation = () => {
                                                 <Typography
                                                     variant="body1"
                                                     sx={{
-                                                        fontSize: '1.1rem',
+                                                        fontSize: { xs: '0.95rem', md: '1.1rem' },
                                                         color: '#333',
                                                         textAlign: { xs: 'center', sm: 'left' },
                                                         fontWeight: 'medium'
@@ -335,9 +345,10 @@ const MonthlyDonation = () => {
                                     sx={{
                                         textAlign: 'center',
                                         color: '#666',
-                                        fontSize: '0.875rem',
+                                        fontSize: { xs: '0.75rem', md: '0.875rem' },
                                         maxWidth: '800px',
-                                        mx: 'auto'
+                                        mx: 'auto',
+                                        px: { xs: 1, md: 0 }
                                     }}
                                 >
                                     Your credit card will be charged today for your first gift, then around the 16th of each month. All
