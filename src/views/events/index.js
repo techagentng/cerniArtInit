@@ -7,7 +7,6 @@ import Form from 'ui-component/form';
 import bridalImage from 'assets/images/xxxxxxxx.jpg';
 import Everyone from 'assets/images/Everyone.jpg';
 import AppBar from 'ui-component/extended/AppBar';
-import youreyes from 'assets/images/youreyes.jpg';
 
 // In Your Eyes Exhibition Images
 import eye1 from 'assets/IN YOUR EYES Exhibition/LAD_7507.jpg';
@@ -89,8 +88,7 @@ const Events = () => {
                     An Art Campaign that intends to use Art to raise awareness about the clean air imperative for healthier living, to
                     educate the people about individual and communal responsibility, to embrace clean air practices and to creatively
                     engage young people with passion for the Art & Creativity, by installing one large Art Mural in each of the 36
-                    States of the Nigerian Federation using paint recycled from carbon emission. (please retain sarah&apos;s image as you
-                    have it there but may be resized to look smaller so that it aligns well)
+                    States of the Nigerian Federation using paint recycled from carbon emission. 
 
                 </Typography>
 
@@ -244,21 +242,6 @@ const Events = () => {
                         aspirational themes that resonate deeply with our times.
                     </Typography>
 
-                    {/* First Past Event Image */}
-                    <Box
-                        component="img"
-                        src={youreyes} 
-                        alt="In Your Eyes - A Contemporary Canvas"
-                        sx={{
-                            width: { xs: '100%', md: '60%' },
-                            height: 'auto',
-                            mb: { md: 6, xs: 1 },
-                            fontFamily: 'DaxlinePro',
-                            display: 'block',
-                            mx: 'auto'
-                        }}
-                    />
-
                     {/* Second Past Event Heading */}
                     <Typography
                         variant="h2"
@@ -286,21 +269,6 @@ const Events = () => {
                     >
                         An Exhibition by Ife Olowu
                     </Typography>
-
-                    {/* Second Past Event Image */}
-                    <Box
-                        component="img"
-                        src={bridalImage} // Replace with Metamorphosis event image
-                        alt="Metamorphosis: A Journey into the Future"
-                        sx={{
-                            width: { xs: '100%', md: '60%' },
-                            height: 'auto',
-                            mb: { md: 6, xs: 1 },
-                            fontFamily: 'DaxlinePro',
-                            display: 'block',
-                            mx: 'auto'
-                        }}
-                    />
 
                     {/* Image Grid */}
                     <Grid container spacing={4}>
